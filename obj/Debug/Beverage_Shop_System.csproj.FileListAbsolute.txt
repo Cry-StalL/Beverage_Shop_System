@@ -1,0 +1,10 @@
+D:\Code\dotnet_projects\Beverage_Shop_System\Beverage_Shop_System\bin\Debug\Beverage_Shop_System.exe.config
+D:\Code\dotnet_projects\Beverage_Shop_System\Beverage_Shop_System\bin\Debug\Beverage_Shop_System.exe
+D:\Code\dotnet_projects\Beverage_Shop_System\Beverage_Shop_System\bin\Debug\Beverage_Shop_System.pdb
+D:\Code\dotnet_projects\Beverage_Shop_System\Beverage_Shop_System\obj\Debug\Beverage_Shop_System.csproj.AssemblyReference.cache
+D:\Code\dotnet_projects\Beverage_Shop_System\Beverage_Shop_System\obj\Debug\Beverage_Shop_System.loginForm.resources
+D:\Code\dotnet_projects\Beverage_Shop_System\Beverage_Shop_System\obj\Debug\Beverage_Shop_System.Properties.Resources.resources
+D:\Code\dotnet_projects\Beverage_Shop_System\Beverage_Shop_System\obj\Debug\Beverage_Shop_System.csproj.GenerateResource.cache
+D:\Code\dotnet_projects\Beverage_Shop_System\Beverage_Shop_System\obj\Debug\Beverage_Shop_System.csproj.CoreCompileInputs.cache
+D:\Code\dotnet_projects\Beverage_Shop_System\Beverage_Shop_System\obj\Debug\Beverage_Shop_System.exe
+D:\Code\dotnet_projects\Beverage_Shop_System\Beverage_Shop_System\obj\Debug\Beverage_Shop_System.pdb
