@@ -8,6 +8,6 @@ namespace Beverage_Shop_System
 {
     internal class DBOperator
     {
-
+        
     }
 }
