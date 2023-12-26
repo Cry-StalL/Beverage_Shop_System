@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Configuration;
+using System.Data;
 using System.Diagnostics;
 using MySql.Data.MySqlClient;
 
@@ -43,5 +44,23 @@ namespace Beverage_Shop_System
             conn.Close();
             Debug.WriteLine("DB Closed");
         }
+        
+        //数据查找
+        public DataTable TableQuery(string queryStr)
+        {
+            MySqlDataAdapter da = new MySqlDataAdapter(queryStr, conn);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
+        }
+        
+        //数据操作
+        public int TableExecute(string queryStr)
+        {
+            MySqlCommand cmd = new MySqlCommand(queryStr, conn);
+            int i = cmd.ExecuteNonQuery();
+            return i;
+        }
+        
     }
 }
