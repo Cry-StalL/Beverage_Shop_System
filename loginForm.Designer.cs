@@ -37,6 +37,7 @@
             this.txtBox_password = new System.Windows.Forms.TextBox();
             this.btn_login = new System.Windows.Forms.Button();
             this.btn_exit = new System.Windows.Forms.Button();
+            this.btn_register = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -94,27 +95,38 @@
             // 
             // btn_login
             // 
-            this.btn_login.Location = new System.Drawing.Point(457, 311);
+            this.btn_login.Location = new System.Drawing.Point(408, 311);
             this.btn_login.Name = "btn_login";
-            this.btn_login.Size = new System.Drawing.Size(75, 23);
+            this.btn_login.Size = new System.Drawing.Size(75, 33);
             this.btn_login.TabIndex = 6;
             this.btn_login.Text = "登  录";
             this.btn_login.UseVisualStyleBackColor = true;
             // 
             // btn_exit
             // 
-            this.btn_exit.Location = new System.Drawing.Point(559, 311);
+            this.btn_exit.Location = new System.Drawing.Point(601, 311);
             this.btn_exit.Name = "btn_exit";
-            this.btn_exit.Size = new System.Drawing.Size(75, 23);
+            this.btn_exit.Size = new System.Drawing.Size(75, 33);
             this.btn_exit.TabIndex = 7;
             this.btn_exit.Text = "退  出";
             this.btn_exit.UseVisualStyleBackColor = true;
+            // 
+            // btn_register
+            // 
+            this.btn_register.Location = new System.Drawing.Point(506, 311);
+            this.btn_register.Name = "btn_register";
+            this.btn_register.Size = new System.Drawing.Size(75, 33);
+            this.btn_register.TabIndex = 8;
+            this.btn_register.Text = "注   册";
+            this.btn_register.UseVisualStyleBackColor = true;
+            this.btn_register.Click += new System.EventHandler(this.btn_register_Click);
             // 
             // loginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(713, 427);
+            this.Controls.Add(this.btn_register);
             this.Controls.Add(this.btn_exit);
             this.Controls.Add(this.btn_login);
             this.Controls.Add(this.txtBox_password);
@@ -129,6 +141,8 @@
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.Button btn_register;
 
         #endregion
 

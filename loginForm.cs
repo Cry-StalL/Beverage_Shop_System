@@ -16,6 +16,10 @@ namespace Beverage_Shop_System
         {
             InitializeComponent();
         }
-        
+
+        private void btn_register_Click(object sender, EventArgs e)
+        {
+            //
+        }
     }
 }

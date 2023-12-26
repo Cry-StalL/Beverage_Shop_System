@@ -13,7 +13,7 @@ namespace Beverage_Shop_System
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            // Application.Run(new loginForm());
+            Application.Run(new loginForm());
             
             DBOperator dbOperator = DBOperator.Instance;
             dbOperator.ConnectDB();
