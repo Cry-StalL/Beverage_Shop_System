@@ -16,7 +16,7 @@ namespace Beverage_Shop_System
             // Application.Run(new loginForm());
             
             DBOperator dbOperator = DBOperator.Instance;
-            dbOperator.Connect();
+            dbOperator.ConnectDB();
         }
     }
 }
