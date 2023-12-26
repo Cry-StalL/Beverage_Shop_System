@@ -2,6 +2,7 @@
 using System.Configuration;
 using System.Data;
 using System.Diagnostics;
+using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
 namespace Beverage_Shop_System
@@ -35,14 +36,30 @@ namespace Beverage_Shop_System
 
         public void ConnectDB()
         {
-            conn.Open();
-            Debug.WriteLine("DB Opened");
+            try
+            {
+                conn.Open();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("connection open failed!");
+            }
+            
+            // Debug.WriteLine("DB Opened");
         }
 
         public void CloseDB()
         {
-            conn.Close();
-            Debug.WriteLine("DB Closed");
+            try
+            {
+                conn.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("connection close failed!");
+            }
+            
+            // Debug.WriteLine("DB Closed");
         }
         
         //数据查找
@@ -61,6 +78,5 @@ namespace Beverage_Shop_System
             int i = cmd.ExecuteNonQuery();
             return i;
         }
-        
     }
 }

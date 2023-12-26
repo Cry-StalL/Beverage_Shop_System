@@ -19,7 +19,8 @@ namespace Beverage_Shop_System
 
         private void btn_register_Click(object sender, EventArgs e)
         {
-            //
+            registerForm register_form = new registerForm();
+            register_form.Show();
         }
     }
 }

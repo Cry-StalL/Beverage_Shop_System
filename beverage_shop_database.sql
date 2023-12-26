@@ -35,7 +35,7 @@ CREATE TABLE user_info
     real_name VARCHAR(255) NULL, -- 真实姓名
     gender INT NULL DEFAULT NULL, -- 0男，1女, NULL未知，默认值为NULL
     telephone INT NULL,
-    delete_flag INT, -- 0正常，1已被删除
+    delete_flag INT DEFAULT  0, -- 0正常，1已被删除
 
     -- staff_specific_field
     username VARCHAR(255) NULL, -- unique

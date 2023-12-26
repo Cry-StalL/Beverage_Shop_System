@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Windows.Forms;
+using MySqlConnector;
+using MySqlException = MySql.Data.MySqlClient.MySqlException;
 
 namespace Beverage_Shop_System
 {
@@ -29,7 +32,34 @@ namespace Beverage_Shop_System
             {
                 MessageBox.Show("电话号码不能为空!");
             }
+            else
+            {
+                int gender = btn_male.Checked ? 0 : 1;
+                DBOperator dbOperator = DBOperator.Instance;
+                string queryStr = $"INSERT INTO user_info(user_id, real_name, gender, telephone, delete_flag, username, password) VALUES (NULL, '{txtBox_name.Text}', {gender}, '{txtBox_telephone.Text}', 0, " +
+                                  $"'{txtBox_username.Text}', '{txtBox_password.Text}')";
+                try
+                {
+                    dbOperator.TableExecute(queryStr);
+                }
+                catch (MySqlException ex)
+                {
+                    Debug.WriteLine(ex.Message);
+                    if (ex.Message.Contains("Duplicate"))
+                    {
+                        //用户名已被注册
+                        MessageBox.Show("用户名已被注册!");
+                    }else if (ex.Message.Contains("for column 'telephone'"))
+                    {
+                        //电话号码无效
+                        MessageBox.Show("电话号码无效!");
+                    }
+
+                    return;
+                }
+                
+                MessageBox.Show("注册成功!");
+            }
         }
-        
     }
 }
