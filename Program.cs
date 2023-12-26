@@ -1,9 +1,5 @@
 ﻿using System;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
-using System.Configuration;
-
-using Beverage_Shop_System;
 
 namespace Beverage_Shop_System
 {
@@ -19,17 +15,8 @@ namespace Beverage_Shop_System
             Application.SetCompatibleTextRenderingDefault(false);
             // Application.Run(new loginForm());
             
-            //测试数据库连接(使用config)
-            string connString = ConfigurationManager.AppSettings["ConnString"];
-            MySqlConnection conn = new MySqlConnection(connString);
-            try
-            {
-                conn.Open();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
+            DBOperator dbOperator = DBOperator.Instance;
+            dbOperator.Connect();
         }
     }
 }

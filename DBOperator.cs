@@ -1,13 +1,34 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Configuration;
+using MySql.Data.MySqlClient;
 
 namespace Beverage_Shop_System
 {
-    internal class DBOperator
+    public sealed class DBOperator
     {
+        private static readonly Lazy<DBOperator> lazy =
+            new Lazy<DBOperator>(() => new DBOperator());
+
+        public static DBOperator Instance
+        {
+            get
+            {
+                return lazy.Value;
+            }
+        }
+
+        private DBOperator()
+        {
+            conn = new MySqlConnection(connString);
+        }
         
+        private string connString = ConfigurationManager.AppSettings["ConnString"];
+
+        private MySqlConnection conn;
+
+        public void Connect()
+        {
+            conn.Open();
+        }
     }
 }
