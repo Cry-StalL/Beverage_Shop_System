@@ -78,5 +78,19 @@ namespace Beverage_Shop_System
             int i = cmd.ExecuteNonQuery();
             return i;
         }
+        
+        /*----用户相关操作----*/
+        public bool userExists(string username)
+        {
+            DataTable dt = TableQuery($"SELECT * FROM user_info WHERE username = '{username}'");
+            if (dt.Rows.Count == 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
     }
 }

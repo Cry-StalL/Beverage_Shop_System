@@ -22,5 +22,45 @@ namespace Beverage_Shop_System
             registerForm register_form = new registerForm();
             register_form.Show();
         }
+
+        private void btn_login_Click(object sender, EventArgs e)
+        {
+            if (txtBox_username.Text == "")
+            {
+                MessageBox.Show("用户名不能为空!");
+            }else if (txtBox_password.Text == "")
+            {
+                MessageBox.Show("密码不能为空!");
+            }
+            else
+            {
+                //尝试登录
+                DBOperator dbOperator = DBOperator.Instance;
+                if (!dbOperator.userExists(txtBox_username.Text))
+                {
+                    //用户不存在
+                    MessageBox.Show("用户不存在!");
+                    return;
+                }
+                else
+                {
+                    //用户存在，检查密码
+                    DataTable dt = dbOperator.TableQuery(
+                        $"SELECT * FROM user_info WHERE username = '{txtBox_username.Text}' AND password = '{txtBox_password.Text}'");
+                    if (dt.Rows.Count == 0)
+                    {
+                        //密码错误
+                        MessageBox.Show("密码错误!");
+                        return;
+                    }
+                    else
+                    {
+                        //密码正确，成功登录
+                        MessageBox.Show("登录成功!");
+                    }
+                }
+            }
+            
+        }
     }
 }

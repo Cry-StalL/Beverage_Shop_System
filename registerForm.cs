@@ -34,6 +34,7 @@ namespace Beverage_Shop_System
             }
             else
             {
+                //输入不为空
                 int gender = btn_male.Checked ? 0 : 1;
                 DBOperator dbOperator = DBOperator.Instance;
                 string queryStr = $"INSERT INTO user_info(user_id, real_name, gender, telephone, delete_flag, username, password) VALUES (NULL, '{txtBox_name.Text}', {gender}, '{txtBox_telephone.Text}', 0, " +
