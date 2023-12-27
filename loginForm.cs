@@ -46,7 +46,7 @@ namespace Beverage_Shop_System
                 {
                     //用户存在，检查密码
                     DataTable dt = dbOperator.TableQuery(
-                        $"SELECT * FROM user_info WHERE username = '{txtBox_username.Text}' AND password = '{txtBox_password.Text}'");
+                        $"SELECT * FROM user_info WHERE user_type = 1 AND username = '{txtBox_username.Text}' AND password = '{txtBox_password.Text}'");
                     if (dt.Rows.Count == 0)
                     {
                         //密码错误
@@ -57,10 +57,23 @@ namespace Beverage_Shop_System
                     {
                         //密码正确，成功登录
                         MessageBox.Show("登录成功!");
+                        
+                        //登录信息缓存
+                        
+                        this.Hide();
+                        mainForm main_form = new mainForm();
+                        main_form.Show();
                     }
                 }
             }
             
+        }
+
+        private void btn_exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            this.Dispose();
+            Application.Exit();
         }
     }
 }

@@ -45,3 +45,4 @@ D:\Code\dotnet_projects\Beverage_Shop_System\Beverage_Shop_System\bin\Debug\Syst
 D:\Code\dotnet_projects\Beverage_Shop_System\Beverage_Shop_System\bin\Debug\System.Threading.Tasks.Extensions.xml
 D:\Code\dotnet_projects\Beverage_Shop_System\Beverage_Shop_System\obj\Debug\Beverage_Shop_System.csproj.CopyComplete
 D:\Code\dotnet_projects\Beverage_Shop_System\Beverage_Shop_System\obj\Debug\Beverage_Shop_System.registerForm.resources
+D:\Code\dotnet_projects\Beverage_Shop_System\Beverage_Shop_System\obj\Debug\Beverage_Shop_System.mainForm.resources

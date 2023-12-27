@@ -44,6 +44,9 @@ CREATE TABLE user_info
     -- member_specific_field
     member_id INT NULL, -- 会员卡号
     
+    -- usertype
+    user_type INT NOT NULL, -- 0为会员，1为操作员
+    
     UNIQUE (username)
 );
 
