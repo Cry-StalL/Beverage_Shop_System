@@ -57,11 +57,11 @@ namespace Beverage_Shop_System
                     {
                         //密码正确，成功登录
                         MessageBox.Show("登录成功!");
-                        
-                        //登录信息缓存
+
+                        DataRow current_staff_info = dt.Rows[0];
                         
                         this.Hide();
-                        mainForm main_form = new mainForm();
+                        mainForm main_form = new mainForm(current_staff_info); //传入查到的dt行
                         main_form.Show();
                     }
                 }

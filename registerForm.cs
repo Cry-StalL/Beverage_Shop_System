@@ -60,6 +60,7 @@ namespace Beverage_Shop_System
                 }
                 
                 MessageBox.Show("注册成功!");
+                this.Close();
             }
         }
     }
