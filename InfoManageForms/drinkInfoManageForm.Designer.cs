@@ -56,6 +56,7 @@ namespace Beverage_Shop_System.ManageForms
             this.checkBox_medium = new System.Windows.Forms.CheckBox();
             this.checkBox_large = new System.Windows.Forms.CheckBox();
             this.btn_cancel_select = new System.Windows.Forms.Button();
+            this.btn_delete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numBox_price_small)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numBox_price_medium)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numBox_price_large)).BeginInit();
@@ -268,11 +269,23 @@ namespace Beverage_Shop_System.ManageForms
             this.btn_cancel_select.UseVisualStyleBackColor = true;
             this.btn_cancel_select.Click += new System.EventHandler(this.btn_cancel_select_Click);
             // 
+            // btn_delete
+            // 
+            this.btn_delete.AutoSize = true;
+            this.btn_delete.Location = new System.Drawing.Point(126, 312);
+            this.btn_delete.Name = "btn_delete";
+            this.btn_delete.Size = new System.Drawing.Size(75, 25);
+            this.btn_delete.TabIndex = 19;
+            this.btn_delete.Text = "删 除";
+            this.btn_delete.UseVisualStyleBackColor = true;
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
+            // 
             // drinkInfoManageForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(732, 703);
+            this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.btn_cancel_select);
             this.Controls.Add(this.checkBox_large);
             this.Controls.Add(this.checkBox_medium);
@@ -300,6 +313,8 @@ namespace Beverage_Shop_System.ManageForms
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.Button btn_delete;
 
         private System.Windows.Forms.Button btn_cancel_select;
 

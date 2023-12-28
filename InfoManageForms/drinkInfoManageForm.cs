@@ -89,6 +89,8 @@ namespace Beverage_Shop_System.ManageForms
             numBox_price_large.Value = 0;
 
             comboBox_status.SelectedIndex = -1;
+            
+            drinkInfoListView.SelectedItems.Clear();
         }
         
         private void btn_reset_Click(object sender, EventArgs e)
@@ -238,8 +240,23 @@ namespace Beverage_Shop_System.ManageForms
 
         private void btn_cancel_select_Click(object sender, EventArgs e)
         {
-            drinkInfoListView.SelectedItems.Clear();
             resetInput();
         }
+
+        private void btn_delete_Click(object sender, EventArgs e)
+        {
+            if (op == Operation.MODIFY)
+            {
+                ListViewItem selected_item = drinkInfoListView.SelectedItems[0];
+                int drink_id = Convert.ToInt32(selected_item.SubItems[0].Text);
+                
+                DBOperator dbOperator = DBOperator.Instance;
+                dbOperator.TableExecute($"DELETE FROM drink_info WHERE drink_id = {drink_id}");
+                displayDrinkInfo();
+                resetInput();
+                changeOperationToAdd();
+            }
+        }
+        
     }
 }
