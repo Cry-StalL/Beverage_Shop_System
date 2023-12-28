@@ -115,7 +115,7 @@ namespace Beverage_Shop_System.ManageForms
 
         private void btn_save_Click(object sender, EventArgs e)
         {
-            //检查输入是否为空、是否重复
+            //检查输入是否为空、是否重复: Duplicate entry '绿茶' for key 'drink_info.drink_name'
             
             //新增模式
             if (op == Operation.ADD)
@@ -168,6 +168,61 @@ namespace Beverage_Shop_System.ManageForms
             }
         }
 
+        /**将选中的饮品信息显示到输入控件中*/
+        private void displaySelectedDrinkInfo()
+        {
+            ListViewItem selected_item = drinkInfoListView.SelectedItems[0];
+            
+            string drink_name = selected_item.SubItems[1].Text;
+            txtBox_drink_name.Text = drink_name;
+
+            string price_small = selected_item.SubItems[2].Text;
+            string price_medium = selected_item.SubItems[3].Text;
+            string price_large = selected_item.SubItems[4].Text;
+
+            if (price_small != "")
+            {
+                checkBox_small.Checked = true;
+                numBox_price_small.Value = Convert.ToInt32(price_small);
+            }
+            else
+            {
+                checkBox_small.Checked = false;
+            }
+            
+            if (price_medium != "")
+            {
+                checkBox_medium.Checked = true;
+                numBox_price_medium.Value = Convert.ToInt32(price_medium);
+            }
+            else
+            {
+                checkBox_medium.Checked = false;
+            }
+            
+            if (price_large != "")
+            {
+                checkBox_large.Checked = true;
+                numBox_price_large.Value = Convert.ToInt32(price_large);
+            }
+            else
+            {
+                checkBox_large.Checked = false;
+            }
+            
+            string status = selected_item.SubItems[5].Text;
+            if (status == "在售")
+            {
+                comboBox_status.SelectedIndex = 0;
+            }else if (status == "售完")
+            {
+                comboBox_status.SelectedIndex = 1;
+            }else if (status == "停售")
+            {
+                comboBox_status.SelectedIndex = 2;
+            }
+        }
+
         private void drinkInfoListView_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (drinkInfoListView.SelectedItems.Count == 0)
@@ -177,12 +232,14 @@ namespace Beverage_Shop_System.ManageForms
             else
             {
                 changeOperationToModify();
+                displaySelectedDrinkInfo();
             }
         }
 
         private void btn_cancel_select_Click(object sender, EventArgs e)
         {
             drinkInfoListView.SelectedItems.Clear();
+            resetInput();
         }
     }
 }
