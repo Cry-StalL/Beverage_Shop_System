@@ -2,6 +2,7 @@
 using System.Data;
 using System.Timers;
 using System.Windows.Forms;
+using Beverage_Shop_System.ManageForms;
 
 namespace Beverage_Shop_System
 {
@@ -31,6 +32,12 @@ namespace Beverage_Shop_System
         private void timer_Elapsed(object sender, ElapsedEventArgs e)
         {
             statusStripTimeLabel.Text = DateTime.Now.ToString();
+        }
+
+        private void drinkInfoManageMenuItem_Click(object sender, EventArgs e)
+        {
+            drinkInfoManageForm drink_info_manage_form = new drinkInfoManageForm();
+            drink_info_manage_form.Show();
         }
     }
 }

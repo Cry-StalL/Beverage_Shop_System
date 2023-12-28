@@ -32,13 +32,12 @@ namespace Beverage_Shop_System
         private void InitializeComponent()
         {
             this.menuStrip = new System.Windows.Forms.MenuStrip();
-            this.系统管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.饮品信息管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.饮品价格管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.会员信息管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.员工信息管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.退出系统ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.manageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.drinkInfoManageMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.memberInfoManageMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.staffInfoManageMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.exitMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.点餐服务ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.点餐收银ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.查询中心ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,7 +60,7 @@ namespace Beverage_Shop_System
             // 
             // menuStrip
             // 
-            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.系统管理ToolStripMenuItem, this.点餐服务ToolStripMenuItem, this.查询中心ToolStripMenuItem });
+            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.manageToolStripMenuItem, this.点餐服务ToolStripMenuItem, this.查询中心ToolStripMenuItem });
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
@@ -69,47 +68,42 @@ namespace Beverage_Shop_System
             this.menuStrip.TabIndex = 1;
             this.menuStrip.Text = "menuStrip1";
             // 
-            // 系统管理ToolStripMenuItem
+            // manageToolStripMenuItem
             // 
-            this.系统管理ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.饮品信息管理ToolStripMenuItem, this.饮品价格管理ToolStripMenuItem, this.会员信息管理ToolStripMenuItem, this.员工信息管理ToolStripMenuItem, this.toolStripSeparator1, this.退出系统ToolStripMenuItem });
-            this.系统管理ToolStripMenuItem.Name = "系统管理ToolStripMenuItem";
-            this.系统管理ToolStripMenuItem.Size = new System.Drawing.Size(81, 24);
-            this.系统管理ToolStripMenuItem.Text = "系统管理";
+            this.manageToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.drinkInfoManageMenuItem, this.memberInfoManageMenuItem, this.staffInfoManageMenuItem, this.toolStripSeparator, this.exitMenuItem });
+            this.manageToolStripMenuItem.Name = "manageToolStripMenuItem";
+            this.manageToolStripMenuItem.Size = new System.Drawing.Size(81, 24);
+            this.manageToolStripMenuItem.Text = "系统管理";
             // 
-            // 饮品信息管理ToolStripMenuItem
+            // drinkInfoManageMenuItem
             // 
-            this.饮品信息管理ToolStripMenuItem.Name = "饮品信息管理ToolStripMenuItem";
-            this.饮品信息管理ToolStripMenuItem.Size = new System.Drawing.Size(168, 24);
-            this.饮品信息管理ToolStripMenuItem.Text = "饮品信息管理";
+            this.drinkInfoManageMenuItem.Name = "drinkInfoManageMenuItem";
+            this.drinkInfoManageMenuItem.Size = new System.Drawing.Size(168, 24);
+            this.drinkInfoManageMenuItem.Text = "饮品信息管理";
+            this.drinkInfoManageMenuItem.Click += new System.EventHandler(this.drinkInfoManageMenuItem_Click);
             // 
-            // 饮品价格管理ToolStripMenuItem
+            // memberInfoManageMenuItem
             // 
-            this.饮品价格管理ToolStripMenuItem.Name = "饮品价格管理ToolStripMenuItem";
-            this.饮品价格管理ToolStripMenuItem.Size = new System.Drawing.Size(168, 24);
-            this.饮品价格管理ToolStripMenuItem.Text = "饮品价格管理";
+            this.memberInfoManageMenuItem.Name = "memberInfoManageMenuItem";
+            this.memberInfoManageMenuItem.Size = new System.Drawing.Size(168, 24);
+            this.memberInfoManageMenuItem.Text = "会员信息管理";
             // 
-            // 会员信息管理ToolStripMenuItem
+            // staffInfoManageMenuItem
             // 
-            this.会员信息管理ToolStripMenuItem.Name = "会员信息管理ToolStripMenuItem";
-            this.会员信息管理ToolStripMenuItem.Size = new System.Drawing.Size(168, 24);
-            this.会员信息管理ToolStripMenuItem.Text = "会员信息管理";
+            this.staffInfoManageMenuItem.Name = "staffInfoManageMenuItem";
+            this.staffInfoManageMenuItem.Size = new System.Drawing.Size(168, 24);
+            this.staffInfoManageMenuItem.Text = "员工信息管理";
             // 
-            // 员工信息管理ToolStripMenuItem
+            // toolStripSeparator
             // 
-            this.员工信息管理ToolStripMenuItem.Name = "员工信息管理ToolStripMenuItem";
-            this.员工信息管理ToolStripMenuItem.Size = new System.Drawing.Size(168, 24);
-            this.员工信息管理ToolStripMenuItem.Text = "员工信息管理";
+            this.toolStripSeparator.Name = "toolStripSeparator";
+            this.toolStripSeparator.Size = new System.Drawing.Size(165, 6);
             // 
-            // toolStripSeparator1
+            // exitMenuItem
             // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(165, 6);
-            // 
-            // 退出系统ToolStripMenuItem
-            // 
-            this.退出系统ToolStripMenuItem.Name = "退出系统ToolStripMenuItem";
-            this.退出系统ToolStripMenuItem.Size = new System.Drawing.Size(168, 24);
-            this.退出系统ToolStripMenuItem.Text = "退出系统";
+            this.exitMenuItem.Name = "exitMenuItem";
+            this.exitMenuItem.Size = new System.Drawing.Size(168, 24);
+            this.exitMenuItem.Text = "退出系统";
             // 
             // 点餐服务ToolStripMenuItem
             // 
@@ -250,8 +244,8 @@ namespace Beverage_Shop_System
 
         private System.Windows.Forms.ToolStrip toolStrip;
 
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem 退出系统ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
+        private System.Windows.Forms.ToolStripMenuItem exitMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 点餐服务ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 点餐收银ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 查询中心ToolStripMenuItem;
@@ -260,13 +254,12 @@ namespace Beverage_Shop_System
         private System.Windows.Forms.ToolStripMenuItem 营业信息查询ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 业绩统计分析ToolStripMenuItem;
 
-        private System.Windows.Forms.ToolStripMenuItem 饮品信息管理ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 饮品价格管理ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 会员信息管理ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 员工信息管理ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem drinkInfoManageMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem memberInfoManageMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem staffInfoManageMenuItem;
 
         private System.Windows.Forms.MenuStrip menuStrip;
-        private System.Windows.Forms.ToolStripMenuItem 系统管理ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem manageToolStripMenuItem;
 
         #endregion
     }
