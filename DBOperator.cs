@@ -71,7 +71,7 @@ namespace Beverage_Shop_System
             return dt;
         }
         
-        //数据操作
+        /**数组操作。返回受影响的行数*/
         public int TableExecute(string queryStr)
         {
             MySqlCommand cmd = new MySqlCommand(queryStr, conn);

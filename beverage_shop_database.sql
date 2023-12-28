@@ -5,11 +5,11 @@ CREATE TABLE drink_info
 (
     drink_id INT PRIMARY KEY AUTO_INCREMENT,
     drink_name VARCHAR(255) NOT NULL, -- unique
-    drink_image VARCHAR(255) NULL,
+    drink_image VARCHAR(255) NULL DEFAULT NULL,
     price_small DOUBLE(10,2) NULL,
     price_medium DOUBLE(10,2) NULL,
     price_large DOUBLE(10,2) NULL,
-    status int NOT NULL DEFAULT 1, -- 1在售, 2售完, 3停售，默认值为1
+    status int NOT NULL DEFAULT 0, -- 0在售, 1售完, 2停售，默认值为0
     
     UNIQUE (drink_name)
     
@@ -60,7 +60,7 @@ CREATE TABLE order_info(
    amount_rate DOUBLE(10,2) NOT NULL, -- 金额比例
    discount_amount DOUBLE(10,2) NOT NULL,
    paid_amount DOUBLE(10,2) NOT NULL,
-   pay_method INT NOT NULL, -- 1现金，2银行卡，3微信，4支付宝
+   pay_method INT NOT NULL, -- 0现金，1银行卡，2微信，3支付宝
    order_time DATETIME NOT NULL,
 
     -- 顾客-会员信息(若有)
