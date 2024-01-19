@@ -84,6 +84,12 @@ namespace Beverage_Shop_System.ManageForms
                                     $"VALUES ('{name}', {gender}, {telephone}, 0, NULL, NULL, {member_id}, 0)");
         }
 
+        /**在数据库中修改选中的会员信息*/
+        private void modifySelectedMemberInfo()
+        {
+            
+        }
+
         /**清空*/
         private void resetInput()
         {
@@ -130,9 +136,71 @@ namespace Beverage_Shop_System.ManageForms
                 resetInput();
             }else if (op == Operation.MODIFY) //修改模式
             {
-                // modifySelectedDrinkInfo();
-                // displayDrinkInfo();
+                modifySelectedMemberInfo();
+                displayMemberInfo();
+                memberInfoListView.SelectedItems.Clear();
+                resetInput();
+                changeOperationToAdd();
             }
+        }
+
+        private void btn_cancel_Click(object sender, EventArgs e)
+        {
+            memberInfoListView.SelectedItems.Clear();
+            resetInput();
+            changeOperationToAdd();
+        }
+
+        private void btn_delete_Click(object sender, EventArgs e)
+        {
+            if (op == Operation.MODIFY)
+            {
+                ListViewItem selected_item = memberInfoListView.SelectedItems[0];
+                int user_id = Convert.ToInt32(selected_item.SubItems[0].Text);
+                
+                DBOperator dbOperator = DBOperator.Instance;
+                dbOperator.TableExecute($"DELETE FROM user_info WHERE user_id = {user_id}");
+                resetInput();
+                displayMemberInfo();
+                changeOperationToAdd();
+            }
+        }
+
+        private void memberInfoListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (memberInfoListView.SelectedItems.Count == 0)
+            {
+                changeOperationToAdd();
+            }
+            else
+            {
+                changeOperationToModify();
+                displaySelectedMemberInfo();
+            }
+        }
+
+        /**将选中的用户信息显示到输入控件中*/
+        private void displaySelectedMemberInfo()
+        {
+            ListViewItem selected_item = memberInfoListView.SelectedItems[0];
+
+            string name = selected_item.SubItems[1].Text;
+            txtBox_name.Text = name;
+            
+            string gender = selected_item.SubItems[2].Text;
+            if (gender == "男")
+            {
+                btn_male.Checked = true;
+            }else if (gender == "女")
+            {
+                btn_female.Checked = false;
+            }
+            
+            string telephone = selected_item.SubItems[3].Text;
+            txtBox_telephone.Text = telephone;
+            
+            string member_id = selected_item.SubItems[4].Text;
+            txtBox_member_id.Text = member_id;
         }
     }
 }

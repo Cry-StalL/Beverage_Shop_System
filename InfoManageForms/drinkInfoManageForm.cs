@@ -162,6 +162,9 @@ namespace Beverage_Shop_System.ManageForms
             {
                 modifySelectedDrinkInfo();
                 displayDrinkInfo();
+                resetInput();
+                drinkInfoListView.SelectedItems.Clear();
+                changeOperationToAdd();
             }
         }
 
@@ -278,6 +281,7 @@ namespace Beverage_Shop_System.ManageForms
 
         private void btn_cancel_select_Click(object sender, EventArgs e)
         {
+            drinkInfoListView.SelectedItems.Clear();
             resetInput();
         }
 
@@ -290,8 +294,8 @@ namespace Beverage_Shop_System.ManageForms
                 
                 DBOperator dbOperator = DBOperator.Instance;
                 dbOperator.TableExecute($"DELETE FROM drink_info WHERE drink_id = {drink_id}");
-                displayDrinkInfo();
                 resetInput();
+                displayDrinkInfo();
                 changeOperationToAdd();
             }
         }
@@ -306,36 +310,36 @@ namespace Beverage_Shop_System.ManageForms
             else
             {
                 ListViewItem selected_item = drinkInfoListView.SelectedItems[0];
-                            int drink_id = Convert.ToInt32(selected_item.SubItems[0].Text);
-                            
-                            string drink_name = txtBox_drink_name.Text;
-                            
-                            string price_small = checkBox_small.Checked ? numBox_price_small.Value.ToString() : "NULL";
-                            string price_medium = checkBox_medium.Checked ? numBox_price_medium.Value.ToString() : "NULL";
-                            string price_large = checkBox_large.Checked ? numBox_price_large.Value.ToString() : "NULL";
-                            
-                            int status = comboBox_status.SelectedIndex;
-                            
-                            DBOperator dbOperator = DBOperator.Instance;
-                            try
-                            {
-                                dbOperator.TableExecute($"UPDATE drink_info SET drink_name = '{drink_name}', price_small = {price_small}," +
-                                                                    $"price_medium = {price_medium}, price_large = {price_large}, status = {status} " +
-                                                                    $"WHERE drink_id = {drink_id}");
-                            }
-                            catch (MySqlException ex)
-                            {
-                                Debug.WriteLine(ex.Message);
-                                if (ex.Message.Contains("Duplicate"))
-                                {
-                                    //饮品名称重复
-                                    MessageBox.Show("饮品名称重复!");
-                                }
+                int drink_id = Convert.ToInt32(selected_item.SubItems[0].Text);
                 
-                                return;
-                            }
-                            
-                            MessageBox.Show("修改成功!");
+                string drink_name = txtBox_drink_name.Text;
+                
+                string price_small = checkBox_small.Checked ? numBox_price_small.Value.ToString() : "NULL";
+                string price_medium = checkBox_medium.Checked ? numBox_price_medium.Value.ToString() : "NULL";
+                string price_large = checkBox_large.Checked ? numBox_price_large.Value.ToString() : "NULL";
+                
+                int status = comboBox_status.SelectedIndex;
+                
+                DBOperator dbOperator = DBOperator.Instance;
+                try
+                {
+                    dbOperator.TableExecute($"UPDATE drink_info SET drink_name = '{drink_name}', price_small = {price_small}," +
+                                                        $"price_medium = {price_medium}, price_large = {price_large}, status = {status} " +
+                                                        $"WHERE drink_id = {drink_id}");
+                }
+                catch (MySqlException ex)
+                {
+                    Debug.WriteLine(ex.Message);
+                    if (ex.Message.Contains("Duplicate"))
+                    {
+                        //饮品名称重复
+                        MessageBox.Show("饮品名称重复!");
+                    }
+    
+                    return;
+                }
+                
+                MessageBox.Show("修改成功!");
             }
             
         }

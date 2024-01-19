@@ -57,6 +57,8 @@ namespace Beverage_Shop_System.ManageForms
             this.columnHeader10 = new System.Windows.Forms.ColumnHeader();
             this.btn_save = new System.Windows.Forms.Button();
             this.btn_reset = new System.Windows.Forms.Button();
+            this.btn_cancel = new System.Windows.Forms.Button();
+            this.btn_delete = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listView1
@@ -195,6 +197,7 @@ namespace Beverage_Shop_System.ManageForms
             // memberInfoListView
             // 
             this.memberInfoListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] { this.columnHeader6, this.columnHeader7, this.columnHeader8, this.columnHeader9, this.columnHeader10 });
+            this.memberInfoListView.FullRowSelect = true;
             this.memberInfoListView.GridLines = true;
             this.memberInfoListView.HideSelection = false;
             this.memberInfoListView.Location = new System.Drawing.Point(12, 301);
@@ -204,6 +207,7 @@ namespace Beverage_Shop_System.ManageForms
             this.memberInfoListView.TabIndex = 12;
             this.memberInfoListView.UseCompatibleStateImageBehavior = false;
             this.memberInfoListView.View = System.Windows.Forms.View.Details;
+            this.memberInfoListView.SelectedIndexChanged += new System.EventHandler(this.memberInfoListView_SelectedIndexChanged);
             // 
             // columnHeader6
             // 
@@ -235,7 +239,7 @@ namespace Beverage_Shop_System.ManageForms
             // 
             // btn_save
             // 
-            this.btn_save.Location = new System.Drawing.Point(294, 228);
+            this.btn_save.Location = new System.Drawing.Point(294, 210);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(75, 40);
             this.btn_save.TabIndex = 24;
@@ -245,18 +249,42 @@ namespace Beverage_Shop_System.ManageForms
             // 
             // btn_reset
             // 
-            this.btn_reset.Location = new System.Drawing.Point(422, 228);
+            this.btn_reset.Location = new System.Drawing.Point(422, 210);
             this.btn_reset.Name = "btn_reset";
             this.btn_reset.Size = new System.Drawing.Size(75, 40);
             this.btn_reset.TabIndex = 25;
             this.btn_reset.Text = "重 置";
             this.btn_reset.UseVisualStyleBackColor = true;
             // 
+            // btn_cancel
+            // 
+            this.btn_cancel.AutoSize = true;
+            this.btn_cancel.Location = new System.Drawing.Point(12, 265);
+            this.btn_cancel.Name = "btn_cancel";
+            this.btn_cancel.Size = new System.Drawing.Size(89, 30);
+            this.btn_cancel.TabIndex = 26;
+            this.btn_cancel.Text = "取消选择";
+            this.btn_cancel.UseVisualStyleBackColor = true;
+            this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
+            // 
+            // btn_delete
+            // 
+            this.btn_delete.AutoSize = true;
+            this.btn_delete.Location = new System.Drawing.Point(129, 265);
+            this.btn_delete.Name = "btn_delete";
+            this.btn_delete.Size = new System.Drawing.Size(75, 29);
+            this.btn_delete.TabIndex = 27;
+            this.btn_delete.Text = "删 除";
+            this.btn_delete.UseVisualStyleBackColor = true;
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
+            // 
             // memberInfoManageForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(732, 703);
+            this.Controls.Add(this.btn_delete);
+            this.Controls.Add(this.btn_cancel);
             this.Controls.Add(this.btn_reset);
             this.Controls.Add(this.btn_save);
             this.Controls.Add(this.label6);
@@ -278,6 +306,10 @@ namespace Beverage_Shop_System.ManageForms
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.Button btn_delete;
+
+        private System.Windows.Forms.Button btn_cancel;
 
         private System.Windows.Forms.Button btn_reset;
 
