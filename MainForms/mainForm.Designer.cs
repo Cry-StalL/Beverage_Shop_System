@@ -87,12 +87,14 @@ namespace Beverage_Shop_System
             this.memberInfoManageMenuItem.Name = "memberInfoManageMenuItem";
             this.memberInfoManageMenuItem.Size = new System.Drawing.Size(168, 24);
             this.memberInfoManageMenuItem.Text = "会员信息管理";
+            this.memberInfoManageMenuItem.Click += new System.EventHandler(this.memberInfoManageMenuItem_Click);
             // 
             // staffInfoManageMenuItem
             // 
             this.staffInfoManageMenuItem.Name = "staffInfoManageMenuItem";
             this.staffInfoManageMenuItem.Size = new System.Drawing.Size(168, 24);
             this.staffInfoManageMenuItem.Text = "员工信息管理";
+            this.staffInfoManageMenuItem.Click += new System.EventHandler(this.staffInfoManageMenuItem_Click);
             // 
             // toolStripSeparator
             // 
@@ -104,6 +106,7 @@ namespace Beverage_Shop_System
             this.exitMenuItem.Name = "exitMenuItem";
             this.exitMenuItem.Size = new System.Drawing.Size(168, 24);
             this.exitMenuItem.Text = "退出系统";
+            this.exitMenuItem.Click += new System.EventHandler(this.exitMenuItem_Click);
             // 
             // 点餐服务ToolStripMenuItem
             // 

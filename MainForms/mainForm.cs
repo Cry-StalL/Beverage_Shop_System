@@ -39,5 +39,22 @@ namespace Beverage_Shop_System
             drinkInfoManageForm drink_info_manage_form = new drinkInfoManageForm();
             drink_info_manage_form.Show();
         }
+
+        private void memberInfoManageMenuItem_Click(object sender, EventArgs e)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        private void staffInfoManageMenuItem_Click(object sender, EventArgs e)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        private void exitMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            this.Dispose();
+            Application.Exit();
+        }
     }
 }
