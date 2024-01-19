@@ -42,7 +42,8 @@ namespace Beverage_Shop_System
 
         private void memberInfoManageMenuItem_Click(object sender, EventArgs e)
         {
-            throw new System.NotImplementedException();
+            memberInfoManageForm member_info_manage_form = new memberInfoManageForm();
+            member_info_manage_form.Show();
         }
 
         private void staffInfoManageMenuItem_Click(object sender, EventArgs e)

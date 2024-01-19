@@ -43,7 +43,7 @@ namespace Beverage_Shop_System.ManageForms
             opLabel.Text = "修改";
         }
         
-        /* 查数据库 */
+        /**查数据库*/
         private void displayDrinkInfo()
         {
             //清空原ListView
@@ -62,16 +62,17 @@ namespace Beverage_Shop_System.ManageForms
                 item.SubItems.Add(row["price_large"].ToString());
 
                 int status = Convert.ToInt32(row["status"]);
-                if (status == 0)
+                switch (status)
                 {
-                    item.SubItems.Add("在售");
-                }
-                else if(status == 1)
-                {
-                    item.SubItems.Add("售完");
-                }else if(status == 2)
-                {
-                    item.SubItems.Add("停售");
+                    case 0:
+                        item.SubItems.Add("在售");
+                        break;
+                    case 1:
+                        item.SubItems.Add("售完");
+                        break;
+                    case 2:
+                        item.SubItems.Add("停售");
+                        break;
                 }
 
                 drinkInfoListView.Items.Add(item);
