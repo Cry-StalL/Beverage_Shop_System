@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Data;
+using System.Diagnostics;
 using System.Numerics;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace Beverage_Shop_System.ManageForms
 {
@@ -79,9 +81,22 @@ namespace Beverage_Shop_System.ManageForms
             
             DBOperator dbOperator = DBOperator.Instance;
 
-            dbOperator.TableExecute("INSERT INTO user_info " +
-                                    "(real_name, gender, telephone, delete_flag, username, password, member_id, user_type)" +
-                                    $"VALUES ('{name}', {gender}, {telephone}, 0, NULL, NULL, {member_id}, 0)");
+            try
+            {
+                dbOperator.TableExecute("INSERT INTO user_info " +
+                                        "(real_name, gender, telephone, delete_flag, username, password, member_id, user_type)" +
+                                        $"VALUES ('{name}', {gender}, {telephone}, 0, NULL, NULL, {member_id}, 0)");
+            }
+            catch (MySqlException ex)
+            {
+                Debug.WriteLine(ex.Message);
+                if (ex.Message.Contains("Duplicate"))
+                {
+                    //会员卡号重复
+                    MessageBox.Show("会员卡号重复!");
+                }
+            }
+            
         }
 
         /**在数据库中修改选中的会员信息*/
@@ -103,9 +118,24 @@ namespace Beverage_Shop_System.ManageForms
             
                 DBOperator dbOperator = DBOperator.Instance;
 
-                dbOperator.TableExecute($"UPDATE user_info SET real_name = '{name}', gender = {gender}," +
-                                        $"telephone = {telephone}, member_id = {member_id} " +
-                                        $"WHERE user_id = {user_id}");
+                try
+                {
+                    dbOperator.TableExecute($"UPDATE user_info SET real_name = '{name}', gender = {gender}," +
+                                            $"telephone = {telephone}, member_id = {member_id} " +
+                                            $"WHERE user_id = {user_id}");
+                }
+                catch (MySqlException ex)
+                {
+                    Debug.WriteLine(ex.Message);
+                    if (ex.Message.Contains("Duplicate"))
+                    {
+                        //会员卡号重复
+                        MessageBox.Show("会员卡号重复!");
+                    }
+    
+                    return;
+                }
+                
                 
                 MessageBox.Show("修改成功!");
             }
@@ -214,7 +244,7 @@ namespace Beverage_Shop_System.ManageForms
                 btn_male.Checked = true;
             }else if (gender == "女")
             {
-                btn_female.Checked = false;
+                btn_female.Checked = true;
             }
             
             string telephone = selected_item.SubItems[3].Text;

@@ -42,12 +42,13 @@ CREATE TABLE user_info
     password VARCHAR(255) NULL,
 
     -- member_specific_field
-    member_id INT NULL, -- 会员卡号
+    member_id INT NULL, -- 会员卡号, unique
     
     -- usertype
     user_type INT NOT NULL, -- 0为会员，1为操作员
     
-    UNIQUE (username)
+    UNIQUE (username),
+    UNIQUE (member_id)
 );
 
 DROP TABLE IF EXISTS order_info;
