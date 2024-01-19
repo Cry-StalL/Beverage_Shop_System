@@ -124,6 +124,11 @@ namespace Beverage_Shop_System.ManageForms
             {
                 addDrinkInfo();
                 displayDrinkInfo();
+            }else if (op == Operation.MODIFY)
+            {
+                modifySelectedDrinkInfo();
+                MessageBox.Show("修改成功!");
+                displayDrinkInfo();
             }
         }
 
@@ -256,6 +261,26 @@ namespace Beverage_Shop_System.ManageForms
                 resetInput();
                 changeOperationToAdd();
             }
+        }
+    
+        /**在数据库中修改选中的饮品信息*/
+        private void modifySelectedDrinkInfo()
+        {
+            ListViewItem selected_item = drinkInfoListView.SelectedItems[0];
+            int drink_id = Convert.ToInt32(selected_item.SubItems[0].Text);
+            
+            string drink_name = txtBox_drink_name.Text;
+            
+            string price_small = checkBox_small.Checked ? numBox_price_small.Value.ToString() : "NULL";
+            string price_medium = checkBox_medium.Checked ? numBox_price_medium.Value.ToString() : "NULL";
+            string price_large = checkBox_large.Checked ? numBox_price_large.Value.ToString() : "NULL";
+            
+            int status = comboBox_status.SelectedIndex;
+            
+            DBOperator dbOperator = DBOperator.Instance;
+            dbOperator.TableExecute($"UPDATE drink_info SET drink_name = '{drink_name}', price_small = {price_small}," +
+                                    $"price_medium = {price_medium}, price_large = {price_large}, status = {status} " +
+                                    $"WHERE drink_id = {drink_id}");
         }
         
     }
