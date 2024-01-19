@@ -87,7 +87,28 @@ namespace Beverage_Shop_System.ManageForms
         /**在数据库中修改选中的会员信息*/
         private void modifySelectedMemberInfo()
         {
+            if (memberInfoListView.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("请选择需要修改的饮品!");
+            }
+            else
+            {
+                ListViewItem selected_item = memberInfoListView.SelectedItems[0];
+                int user_id = Convert.ToInt32(selected_item.SubItems[0].Text);
+
+                string name = txtBox_name.Text;
+                int gender = btn_male.Checked ? 0 : 1;
+                long telephone = Convert.ToInt64(txtBox_telephone.Text);
+                long member_id = Convert.ToInt64(txtBox_member_id.Text);
             
+                DBOperator dbOperator = DBOperator.Instance;
+
+                dbOperator.TableExecute($"UPDATE user_info SET real_name = '{name}', gender = {gender}," +
+                                        $"telephone = {telephone}, member_id = {member_id} " +
+                                        $"WHERE user_id = {user_id}");
+                
+                MessageBox.Show("修改成功!");
+            }
         }
 
         /**清空*/
