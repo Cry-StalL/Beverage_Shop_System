@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Data;
+using System.Diagnostics;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace Beverage_Shop_System.ManageForms
 {
@@ -110,24 +112,54 @@ namespace Beverage_Shop_System.ManageForms
             int status = comboBox_status.SelectedIndex;
             
             DBOperator dbOperator = DBOperator.Instance;
-            dbOperator.TableExecute($"INSERT INTO drink_info " +
-                                    $"(drink_id, drink_name, drink_image, price_small, price_medium, price_large, status) " +
-                                    $"VALUES (NULL, '{drink_name}', NULL, {price_small}, {price_medium}, {price_large}, {status})");
+
+            try
+            {
+                dbOperator.TableExecute($"INSERT INTO drink_info " +
+                                        $"(drink_id, drink_name, drink_image, price_small, price_medium, price_large, status) " +
+                                        $"VALUES (NULL, '{drink_name}', NULL, {price_small}, {price_medium}, {price_large}, {status})");
+            }
+            catch (MySqlException ex)
+            {
+                Debug.WriteLine(ex.Message);
+                if (ex.Message.Contains("Duplicate"))
+                {
+                    //饮品名称重复
+                    MessageBox.Show("饮品名称重复!");
+                }
+            }
+            
         }
 
         private void btn_save_Click(object sender, EventArgs e)
         {
-            //检查输入是否为空、是否重复: Duplicate entry '绿茶' for key 'drink_info.drink_name'
+            //检查输入是否为空
+            if (txtBox_drink_name.Text == "")
+            {
+                MessageBox.Show("请输入饮品名称!");
+                return;
+            }
             
-            //新增模式
-            if (op == Operation.ADD)
+            if (comboBox_status.SelectedIndex == -1)
+            {
+                MessageBox.Show("请选择饮品销售状态!");
+                return;
+            }
+            
+            if (!checkBox_small.Checked && !checkBox_medium.Checked && !checkBox_large.Checked)
+            {
+                MessageBox.Show("请设置饮品价格!");
+                return;
+            }
+            
+            if (op == Operation.ADD) //新增模式
             {
                 addDrinkInfo();
                 displayDrinkInfo();
-            }else if (op == Operation.MODIFY)
+                resetInput();
+            }else if (op == Operation.MODIFY) //修改模式
             {
                 modifySelectedDrinkInfo();
-                MessageBox.Show("修改成功!");
                 displayDrinkInfo();
             }
         }
@@ -266,21 +298,45 @@ namespace Beverage_Shop_System.ManageForms
         /**在数据库中修改选中的饮品信息*/
         private void modifySelectedDrinkInfo()
         {
-            ListViewItem selected_item = drinkInfoListView.SelectedItems[0];
-            int drink_id = Convert.ToInt32(selected_item.SubItems[0].Text);
+            if (drinkInfoListView.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("请选择需要修改的饮品!");
+            }
+            else
+            {
+                ListViewItem selected_item = drinkInfoListView.SelectedItems[0];
+                            int drink_id = Convert.ToInt32(selected_item.SubItems[0].Text);
+                            
+                            string drink_name = txtBox_drink_name.Text;
+                            
+                            string price_small = checkBox_small.Checked ? numBox_price_small.Value.ToString() : "NULL";
+                            string price_medium = checkBox_medium.Checked ? numBox_price_medium.Value.ToString() : "NULL";
+                            string price_large = checkBox_large.Checked ? numBox_price_large.Value.ToString() : "NULL";
+                            
+                            int status = comboBox_status.SelectedIndex;
+                            
+                            DBOperator dbOperator = DBOperator.Instance;
+                            try
+                            {
+                                dbOperator.TableExecute($"UPDATE drink_info SET drink_name = '{drink_name}', price_small = {price_small}," +
+                                                                    $"price_medium = {price_medium}, price_large = {price_large}, status = {status} " +
+                                                                    $"WHERE drink_id = {drink_id}");
+                            }
+                            catch (MySqlException ex)
+                            {
+                                Debug.WriteLine(ex.Message);
+                                if (ex.Message.Contains("Duplicate"))
+                                {
+                                    //饮品名称重复
+                                    MessageBox.Show("饮品名称重复!");
+                                }
+                
+                                return;
+                            }
+                            
+                            MessageBox.Show("修改成功!");
+            }
             
-            string drink_name = txtBox_drink_name.Text;
-            
-            string price_small = checkBox_small.Checked ? numBox_price_small.Value.ToString() : "NULL";
-            string price_medium = checkBox_medium.Checked ? numBox_price_medium.Value.ToString() : "NULL";
-            string price_large = checkBox_large.Checked ? numBox_price_large.Value.ToString() : "NULL";
-            
-            int status = comboBox_status.SelectedIndex;
-            
-            DBOperator dbOperator = DBOperator.Instance;
-            dbOperator.TableExecute($"UPDATE drink_info SET drink_name = '{drink_name}', price_small = {price_small}," +
-                                    $"price_medium = {price_medium}, price_large = {price_large}, status = {status} " +
-                                    $"WHERE drink_id = {drink_id}");
         }
         
     }

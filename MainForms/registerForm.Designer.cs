@@ -106,6 +106,7 @@ namespace Beverage_Shop_System
             // 
             this.txtBox_password.Location = new System.Drawing.Point(189, 76);
             this.txtBox_password.Name = "txtBox_password";
+            this.txtBox_password.PasswordChar = '•';
             this.txtBox_password.Size = new System.Drawing.Size(158, 25);
             this.txtBox_password.TabIndex = 7;
             // 
