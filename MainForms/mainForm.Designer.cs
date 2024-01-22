@@ -41,7 +41,7 @@ namespace Beverage_Shop_System
             this.exitLoginMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.orderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.点餐收银ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.orderMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.playMusicMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.查询中心ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.饮品信息查询ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -123,16 +123,17 @@ namespace Beverage_Shop_System
             // 
             // orderToolStripMenuItem
             // 
-            this.orderToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.点餐收银ToolStripMenuItem, this.playMusicMenuItem });
+            this.orderToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.orderMenuItem, this.playMusicMenuItem });
             this.orderToolStripMenuItem.Name = "orderToolStripMenuItem";
             this.orderToolStripMenuItem.Size = new System.Drawing.Size(81, 24);
             this.orderToolStripMenuItem.Text = "点餐服务";
             // 
-            // 点餐收银ToolStripMenuItem
+            // orderMenuItem
             // 
-            this.点餐收银ToolStripMenuItem.Name = "点餐收银ToolStripMenuItem";
-            this.点餐收银ToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
-            this.点餐收银ToolStripMenuItem.Text = "点餐收银";
+            this.orderMenuItem.Name = "orderMenuItem";
+            this.orderMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.orderMenuItem.Text = "点餐收银";
+            this.orderMenuItem.Click += new System.EventHandler(this.orderMenuItem_Click);
             // 
             // playMusicMenuItem
             // 
@@ -294,7 +295,7 @@ namespace Beverage_Shop_System
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
         private System.Windows.Forms.ToolStripMenuItem exitMenuItem;
         private System.Windows.Forms.ToolStripMenuItem orderToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 点餐收银ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem orderMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 查询中心ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 饮品信息查询ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 会员信息查询ToolStripMenuItem;

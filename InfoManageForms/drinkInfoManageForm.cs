@@ -115,7 +115,12 @@ namespace Beverage_Shop_System.ManageForms
             string price_large = checkBox_large.Checked ? numBox_price_large.Value.ToString() : "NULL";
             
             string drink_image = pictureBox.ImageLocation;
-            drink_image = drink_image.Replace(@"\",@"\\"); //将文件路径中的一个反斜杠替换为两个反斜杠
+            if (drink_image != null)
+            {
+                MessageBox.Show("abcd");
+                drink_image = drink_image.Replace(@"\",@"\\"); //将文件路径中的一个反斜杠替换为两个反斜杠
+            }
+            
             
             int status = comboBox_status.SelectedIndex;
             
@@ -347,7 +352,7 @@ namespace Beverage_Shop_System.ManageForms
                 {
                     dbOperator.TableExecute($"UPDATE drink_info SET drink_name = '{drink_name}', price_small = {price_small}," +
                                                         $"price_medium = {price_medium}, price_large = {price_large}, " +
-                                                        $"drink_image = {drink_image}, status = {status} " +
+                                                        $"drink_image = '{drink_image}', status = {status} " +
                                                         $"WHERE drink_id = {drink_id}");
                 }
                 catch (MySqlException ex)

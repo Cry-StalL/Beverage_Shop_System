@@ -3,6 +3,7 @@ using System.Data;
 using System.Timers;
 using System.Windows.Forms;
 using Beverage_Shop_System.ManageForms;
+using Beverage_Shop_System.OrderForms;
 
 namespace Beverage_Shop_System
 {
@@ -81,6 +82,12 @@ namespace Beverage_Shop_System
         private void playMusicMenuItem_Click(object sender, EventArgs e)
         {
             playMusic();
+        }
+
+        private void orderMenuItem_Click(object sender, EventArgs e)
+        {
+            OrderForm orderForm = new OrderForm();
+            orderForm.Show();
         }
     }
 }
