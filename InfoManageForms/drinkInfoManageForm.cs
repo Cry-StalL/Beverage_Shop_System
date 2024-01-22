@@ -343,6 +343,18 @@ namespace Beverage_Shop_System.ManageForms
             }
             
         }
-        
+
+        private void btn_selectPicture_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.InitialDirectory = "./";
+            openFileDialog.Filter = "图片文件|*.jpg;*.png|所有文件|*.*";
+            
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string selectedFile = openFileDialog.FileName;
+                pictureBox.ImageLocation = selectedFile;
+            }
+        }
     }
 }

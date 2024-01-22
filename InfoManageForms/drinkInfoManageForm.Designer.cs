@@ -57,9 +57,13 @@ namespace Beverage_Shop_System.ManageForms
             this.checkBox_large = new System.Windows.Forms.CheckBox();
             this.btn_cancel_select = new System.Windows.Forms.Button();
             this.btn_delete = new System.Windows.Forms.Button();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
+            this.btn_selectPicture = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numBox_price_small)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numBox_price_medium)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numBox_price_large)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // drinkInfoListView
@@ -68,10 +72,10 @@ namespace Beverage_Shop_System.ManageForms
             this.drinkInfoListView.FullRowSelect = true;
             this.drinkInfoListView.GridLines = true;
             this.drinkInfoListView.HideSelection = false;
-            this.drinkInfoListView.Location = new System.Drawing.Point(12, 341);
+            this.drinkInfoListView.Location = new System.Drawing.Point(12, 377);
             this.drinkInfoListView.MultiSelect = false;
             this.drinkInfoListView.Name = "drinkInfoListView";
-            this.drinkInfoListView.Size = new System.Drawing.Size(708, 350);
+            this.drinkInfoListView.Size = new System.Drawing.Size(708, 314);
             this.drinkInfoListView.TabIndex = 0;
             this.drinkInfoListView.UseCompatibleStateImageBehavior = false;
             this.drinkInfoListView.View = System.Windows.Forms.View.Details;
@@ -124,7 +128,7 @@ namespace Beverage_Shop_System.ManageForms
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(12, 70);
+            this.label2.Location = new System.Drawing.Point(11, 57);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 23);
             this.label2.TabIndex = 3;
@@ -156,7 +160,7 @@ namespace Beverage_Shop_System.ManageForms
             // 
             // txtBox_drink_name
             // 
-            this.txtBox_drink_name.Location = new System.Drawing.Point(90, 67);
+            this.txtBox_drink_name.Location = new System.Drawing.Point(89, 54);
             this.txtBox_drink_name.Name = "txtBox_drink_name";
             this.txtBox_drink_name.Size = new System.Drawing.Size(150, 25);
             this.txtBox_drink_name.TabIndex = 7;
@@ -192,14 +196,14 @@ namespace Beverage_Shop_System.ManageForms
             // 
             this.comboBox_status.FormattingEnabled = true;
             this.comboBox_status.Items.AddRange(new object[] { "在售", "售完", "停售" });
-            this.comboBox_status.Location = new System.Drawing.Point(386, 67);
+            this.comboBox_status.Location = new System.Drawing.Point(385, 54);
             this.comboBox_status.Name = "comboBox_status";
             this.comboBox_status.Size = new System.Drawing.Size(121, 23);
             this.comboBox_status.TabIndex = 11;
             // 
             // label6
             // 
-            this.label6.Location = new System.Drawing.Point(336, 70);
+            this.label6.Location = new System.Drawing.Point(335, 57);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(49, 23);
             this.label6.TabIndex = 12;
@@ -207,7 +211,7 @@ namespace Beverage_Shop_System.ManageForms
             // 
             // btn_save
             // 
-            this.btn_save.Location = new System.Drawing.Point(336, 244);
+            this.btn_save.Location = new System.Drawing.Point(348, 297);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(75, 35);
             this.btn_save.TabIndex = 13;
@@ -217,7 +221,7 @@ namespace Beverage_Shop_System.ManageForms
             // 
             // btn_reset
             // 
-            this.btn_reset.Location = new System.Drawing.Point(469, 244);
+            this.btn_reset.Location = new System.Drawing.Point(491, 297);
             this.btn_reset.Name = "btn_reset";
             this.btn_reset.Size = new System.Drawing.Size(75, 35);
             this.btn_reset.TabIndex = 14;
@@ -261,7 +265,7 @@ namespace Beverage_Shop_System.ManageForms
             // btn_cancel_select
             // 
             this.btn_cancel_select.AutoSize = true;
-            this.btn_cancel_select.Location = new System.Drawing.Point(12, 312);
+            this.btn_cancel_select.Location = new System.Drawing.Point(12, 346);
             this.btn_cancel_select.Name = "btn_cancel_select";
             this.btn_cancel_select.Size = new System.Drawing.Size(77, 25);
             this.btn_cancel_select.TabIndex = 18;
@@ -272,7 +276,7 @@ namespace Beverage_Shop_System.ManageForms
             // btn_delete
             // 
             this.btn_delete.AutoSize = true;
-            this.btn_delete.Location = new System.Drawing.Point(126, 312);
+            this.btn_delete.Location = new System.Drawing.Point(126, 346);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(75, 25);
             this.btn_delete.TabIndex = 19;
@@ -280,11 +284,42 @@ namespace Beverage_Shop_System.ManageForms
             this.btn_delete.UseVisualStyleBackColor = true;
             this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 
+            // pictureBox
+            // 
+            this.pictureBox.Location = new System.Drawing.Point(346, 143);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(220, 148);
+            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox.TabIndex = 20;
+            this.pictureBox.TabStop = false;
+            // 
+            // btn_selectPicture
+            // 
+            this.btn_selectPicture.Location = new System.Drawing.Point(421, 113);
+            this.btn_selectPicture.Name = "btn_selectPicture";
+            this.btn_selectPicture.Size = new System.Drawing.Size(85, 24);
+            this.btn_selectPicture.TabIndex = 21;
+            this.btn_selectPicture.Text = "选择图片";
+            this.btn_selectPicture.UseVisualStyleBackColor = true;
+            this.btn_selectPicture.Click += new System.EventHandler(this.btn_selectPicture_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(348, 118);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(67, 15);
+            this.label3.TabIndex = 22;
+            this.label3.Text = "饮品图片";
+            // 
             // drinkInfoManageForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(732, 703);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.btn_selectPicture);
+            this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.btn_cancel_select);
             this.Controls.Add(this.checkBox_large);
@@ -310,9 +345,15 @@ namespace Beverage_Shop_System.ManageForms
             ((System.ComponentModel.ISupportInitialize)(this.numBox_price_small)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numBox_price_medium)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numBox_price_large)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.Button btn_selectPicture;
+        private System.Windows.Forms.Label label3;
+
+        private System.Windows.Forms.PictureBox pictureBox;
 
         private System.Windows.Forms.Button btn_delete;
 
