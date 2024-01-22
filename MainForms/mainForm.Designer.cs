@@ -31,6 +31,7 @@ namespace Beverage_Shop_System
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainForm));
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.manageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.drinkInfoManageMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,9 +56,12 @@ namespace Beverage_Shop_System
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStripTimeLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.timer = new System.Timers.Timer();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.player = new AxWMPLib.AxWindowsMediaPlayer();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.timer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -127,13 +131,13 @@ namespace Beverage_Shop_System
             // 点餐收银ToolStripMenuItem
             // 
             this.点餐收银ToolStripMenuItem.Name = "点餐收银ToolStripMenuItem";
-            this.点餐收银ToolStripMenuItem.Size = new System.Drawing.Size(138, 24);
+            this.点餐收银ToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
             this.点餐收银ToolStripMenuItem.Text = "点餐收银";
             // 
             // playMusicMenuItem
             // 
             this.playMusicMenuItem.Name = "playMusicMenuItem";
-            this.playMusicMenuItem.Size = new System.Drawing.Size(138, 24);
+            this.playMusicMenuItem.Size = new System.Drawing.Size(152, 24);
             this.playMusicMenuItem.Text = "音乐播放";
             this.playMusicMenuItem.Click += new System.EventHandler(this.playMusicMenuItem_Click);
             // 
@@ -225,11 +229,26 @@ namespace Beverage_Shop_System
             this.timer.SynchronizingObject = this;
             this.timer.Elapsed += new System.Timers.ElapsedEventHandler(this.timer_Elapsed);
             // 
+            // openFileDialog
+            // 
+            this.openFileDialog.FileName = "openFileDialog1";
+            // 
+            // player
+            // 
+            this.player.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.player.Enabled = true;
+            this.player.Location = new System.Drawing.Point(0, 632);
+            this.player.Name = "player";
+            this.player.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("player.OcxState")));
+            this.player.Size = new System.Drawing.Size(1109, 45);
+            this.player.TabIndex = 5;
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1109, 702);
+            this.Controls.Add(this.player);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.toolStrip);
             this.Controls.Add(this.menuStrip);
@@ -243,9 +262,14 @@ namespace Beverage_Shop_System
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.timer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private AxWMPLib.AxWindowsMediaPlayer player;
+
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
 
         private System.Windows.Forms.ToolStripMenuItem playMusicMenuItem;
 

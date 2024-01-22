@@ -36,6 +36,18 @@ namespace Beverage_Shop_System
             statusStripTimeLabel.Text = DateTime.Now.ToString();
         }
 
+        private void playMusic()
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "音频文件|*.mp3;*.wav;*.flac;*.aac;*.m4a;*.mid;*.rmi;*.midi|所有文件|*.*";
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string selectedFile = openFileDialog.FileName;
+                player.URL = selectedFile;
+            }
+        }
+
         private void drinkInfoManageMenuItem_Click(object sender, EventArgs e)
         {
             drinkInfoManageForm drink_info_manage_form = new drinkInfoManageForm();
@@ -68,7 +80,7 @@ namespace Beverage_Shop_System
 
         private void playMusicMenuItem_Click(object sender, EventArgs e)
         {
-            
+            playMusic();
         }
     }
 }
