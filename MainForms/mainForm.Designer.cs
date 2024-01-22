@@ -44,10 +44,10 @@ namespace Beverage_Shop_System
             this.orderMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.playMusicMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.查询中心ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.饮品信息查询ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.会员信息查询ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.营业信息查询ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.业绩统计分析ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.drinkInfoQueryMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.memberInfoQueryMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.orderInfoQueryMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saleStatsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.statusStripLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -144,34 +144,34 @@ namespace Beverage_Shop_System
             // 
             // 查询中心ToolStripMenuItem
             // 
-            this.查询中心ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.饮品信息查询ToolStripMenuItem, this.会员信息查询ToolStripMenuItem, this.营业信息查询ToolStripMenuItem, this.业绩统计分析ToolStripMenuItem });
+            this.查询中心ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.drinkInfoQueryMenuItem, this.memberInfoQueryMenuItem, this.orderInfoQueryMenuItem, this.saleStatsMenuItem });
             this.查询中心ToolStripMenuItem.Name = "查询中心ToolStripMenuItem";
             this.查询中心ToolStripMenuItem.Size = new System.Drawing.Size(81, 24);
             this.查询中心ToolStripMenuItem.Text = "查询中心";
             // 
-            // 饮品信息查询ToolStripMenuItem
+            // drinkInfoQueryMenuItem
             // 
-            this.饮品信息查询ToolStripMenuItem.Name = "饮品信息查询ToolStripMenuItem";
-            this.饮品信息查询ToolStripMenuItem.Size = new System.Drawing.Size(168, 24);
-            this.饮品信息查询ToolStripMenuItem.Text = "饮品信息查询";
+            this.drinkInfoQueryMenuItem.Name = "drinkInfoQueryMenuItem";
+            this.drinkInfoQueryMenuItem.Size = new System.Drawing.Size(168, 24);
+            this.drinkInfoQueryMenuItem.Text = "饮品信息查询";
             // 
-            // 会员信息查询ToolStripMenuItem
+            // memberInfoQueryMenuItem
             // 
-            this.会员信息查询ToolStripMenuItem.Name = "会员信息查询ToolStripMenuItem";
-            this.会员信息查询ToolStripMenuItem.Size = new System.Drawing.Size(168, 24);
-            this.会员信息查询ToolStripMenuItem.Text = "会员信息查询";
+            this.memberInfoQueryMenuItem.Name = "memberInfoQueryMenuItem";
+            this.memberInfoQueryMenuItem.Size = new System.Drawing.Size(168, 24);
+            this.memberInfoQueryMenuItem.Text = "会员信息查询";
             // 
-            // 营业信息查询ToolStripMenuItem
+            // orderInfoQueryMenuItem
             // 
-            this.营业信息查询ToolStripMenuItem.Name = "营业信息查询ToolStripMenuItem";
-            this.营业信息查询ToolStripMenuItem.Size = new System.Drawing.Size(168, 24);
-            this.营业信息查询ToolStripMenuItem.Text = "营业信息查询";
+            this.orderInfoQueryMenuItem.Name = "orderInfoQueryMenuItem";
+            this.orderInfoQueryMenuItem.Size = new System.Drawing.Size(168, 24);
+            this.orderInfoQueryMenuItem.Text = "营业信息查询";
             // 
-            // 业绩统计分析ToolStripMenuItem
+            // saleStatsMenuItem
             // 
-            this.业绩统计分析ToolStripMenuItem.Name = "业绩统计分析ToolStripMenuItem";
-            this.业绩统计分析ToolStripMenuItem.Size = new System.Drawing.Size(168, 24);
-            this.业绩统计分析ToolStripMenuItem.Text = "业绩统计分析";
+            this.saleStatsMenuItem.Name = "saleStatsMenuItem";
+            this.saleStatsMenuItem.Size = new System.Drawing.Size(168, 24);
+            this.saleStatsMenuItem.Text = "业绩统计分析";
             // 
             // toolStrip
             // 
@@ -297,10 +297,10 @@ namespace Beverage_Shop_System
         private System.Windows.Forms.ToolStripMenuItem orderToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem orderMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 查询中心ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 饮品信息查询ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 会员信息查询ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 营业信息查询ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 业绩统计分析ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem drinkInfoQueryMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem memberInfoQueryMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem orderInfoQueryMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saleStatsMenuItem;
 
         private System.Windows.Forms.ToolStripMenuItem drinkInfoManageMenuItem;
         private System.Windows.Forms.ToolStripMenuItem memberInfoManageMenuItem;
