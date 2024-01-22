@@ -37,9 +37,11 @@ namespace Beverage_Shop_System
             this.memberInfoManageMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.staffInfoManageMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.exitLoginMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.点餐服务ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.orderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.点餐收银ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.playMusicMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.查询中心ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.饮品信息查询ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.会员信息查询ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,7 +55,6 @@ namespace Beverage_Shop_System
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStripTimeLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.timer = new System.Timers.Timer();
-            this.exitLoginMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.timer)).BeginInit();
@@ -61,7 +62,7 @@ namespace Beverage_Shop_System
             // 
             // menuStrip
             // 
-            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.manageToolStripMenuItem, this.点餐服务ToolStripMenuItem, this.查询中心ToolStripMenuItem });
+            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.manageToolStripMenuItem, this.orderToolStripMenuItem, this.查询中心ToolStripMenuItem });
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
@@ -102,6 +103,13 @@ namespace Beverage_Shop_System
             this.toolStripSeparator.Name = "toolStripSeparator";
             this.toolStripSeparator.Size = new System.Drawing.Size(165, 6);
             // 
+            // exitLoginMenuItem
+            // 
+            this.exitLoginMenuItem.Name = "exitLoginMenuItem";
+            this.exitLoginMenuItem.Size = new System.Drawing.Size(168, 24);
+            this.exitLoginMenuItem.Text = "退出登录";
+            this.exitLoginMenuItem.Click += new System.EventHandler(this.exitLoginMenuItem_Click);
+            // 
             // exitMenuItem
             // 
             this.exitMenuItem.Name = "exitMenuItem";
@@ -109,18 +117,25 @@ namespace Beverage_Shop_System
             this.exitMenuItem.Text = "退出系统";
             this.exitMenuItem.Click += new System.EventHandler(this.exitMenuItem_Click);
             // 
-            // 点餐服务ToolStripMenuItem
+            // orderToolStripMenuItem
             // 
-            this.点餐服务ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.点餐收银ToolStripMenuItem });
-            this.点餐服务ToolStripMenuItem.Name = "点餐服务ToolStripMenuItem";
-            this.点餐服务ToolStripMenuItem.Size = new System.Drawing.Size(81, 24);
-            this.点餐服务ToolStripMenuItem.Text = "点餐服务";
+            this.orderToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.点餐收银ToolStripMenuItem, this.playMusicMenuItem });
+            this.orderToolStripMenuItem.Name = "orderToolStripMenuItem";
+            this.orderToolStripMenuItem.Size = new System.Drawing.Size(81, 24);
+            this.orderToolStripMenuItem.Text = "点餐服务";
             // 
             // 点餐收银ToolStripMenuItem
             // 
             this.点餐收银ToolStripMenuItem.Name = "点餐收银ToolStripMenuItem";
             this.点餐收银ToolStripMenuItem.Size = new System.Drawing.Size(138, 24);
             this.点餐收银ToolStripMenuItem.Text = "点餐收银";
+            // 
+            // playMusicMenuItem
+            // 
+            this.playMusicMenuItem.Name = "playMusicMenuItem";
+            this.playMusicMenuItem.Size = new System.Drawing.Size(138, 24);
+            this.playMusicMenuItem.Text = "音乐播放";
+            this.playMusicMenuItem.Click += new System.EventHandler(this.playMusicMenuItem_Click);
             // 
             // 查询中心ToolStripMenuItem
             // 
@@ -186,7 +201,7 @@ namespace Beverage_Shop_System
             // 
             this.toolStripStatusLabel1.AutoSize = false;
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(320, 20);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(250, 20);
             this.toolStripStatusLabel1.Text = "          ";
             // 
             // toolStripStatusLabel2
@@ -210,13 +225,6 @@ namespace Beverage_Shop_System
             this.timer.SynchronizingObject = this;
             this.timer.Elapsed += new System.Timers.ElapsedEventHandler(this.timer_Elapsed);
             // 
-            // exitLoginMenuItem
-            // 
-            this.exitLoginMenuItem.Name = "exitLoginMenuItem";
-            this.exitLoginMenuItem.Size = new System.Drawing.Size(168, 24);
-            this.exitLoginMenuItem.Text = "退出登录";
-            this.exitLoginMenuItem.Click += new System.EventHandler(this.exitLoginMenuItem_Click);
-            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -239,6 +247,8 @@ namespace Beverage_Shop_System
             this.PerformLayout();
         }
 
+        private System.Windows.Forms.ToolStripMenuItem playMusicMenuItem;
+
         private System.Windows.Forms.ToolStripMenuItem exitLoginMenuItem;
 
         private System.Timers.Timer timer;
@@ -259,7 +269,7 @@ namespace Beverage_Shop_System
 
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
         private System.Windows.Forms.ToolStripMenuItem exitMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 点餐服务ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem orderToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 点餐收银ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 查询中心ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 饮品信息查询ToolStripMenuItem;

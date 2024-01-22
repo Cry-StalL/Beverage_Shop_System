@@ -66,6 +66,9 @@ namespace Beverage_Shop_System
             Application.Exit();
         }
 
-        
+        private void playMusicMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
