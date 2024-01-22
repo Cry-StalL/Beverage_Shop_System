@@ -114,6 +114,9 @@ namespace Beverage_Shop_System.ManageForms
             string price_medium = checkBox_medium.Checked ? numBox_price_medium.Value.ToString() : "NULL";
             string price_large = checkBox_large.Checked ? numBox_price_large.Value.ToString() : "NULL";
             
+            string drink_image = pictureBox.ImageLocation;
+            drink_image = drink_image.Replace(@"\",@"\\"); //将文件路径中的一个反斜杠替换为两个反斜杠
+            
             int status = comboBox_status.SelectedIndex;
             
             DBOperator dbOperator = DBOperator.Instance;
@@ -122,7 +125,7 @@ namespace Beverage_Shop_System.ManageForms
             {
                 dbOperator.TableExecute($"INSERT INTO drink_info " +
                                         $"(drink_id, drink_name, drink_image, price_small, price_medium, price_large, status) " +
-                                        $"VALUES (NULL, '{drink_name}', NULL, {price_small}, {price_medium}, {price_large}, {status})");
+                                        $"VALUES (NULL, '{drink_name}', '{drink_image}', {price_small}, {price_medium}, {price_large}, {status})");
             }
             catch (MySqlException ex)
             {
@@ -334,13 +337,17 @@ namespace Beverage_Shop_System.ManageForms
                 string price_medium = checkBox_medium.Checked ? numBox_price_medium.Value.ToString() : "NULL";
                 string price_large = checkBox_large.Checked ? numBox_price_large.Value.ToString() : "NULL";
                 
+                string drink_image = pictureBox.ImageLocation;
+                drink_image = drink_image.Replace(@"\",@"\\"); //将文件路径中的一个反斜杠替换为两个反斜杠
+                
                 int status = comboBox_status.SelectedIndex;
                 
                 DBOperator dbOperator = DBOperator.Instance;
                 try
                 {
                     dbOperator.TableExecute($"UPDATE drink_info SET drink_name = '{drink_name}', price_small = {price_small}," +
-                                                        $"price_medium = {price_medium}, price_large = {price_large}, status = {status} " +
+                                                        $"price_medium = {price_medium}, price_large = {price_large}, " +
+                                                        $"drink_image = {drink_image}, status = {status} " +
                                                         $"WHERE drink_id = {drink_id}");
                 }
                 catch (MySqlException ex)
@@ -364,22 +371,13 @@ namespace Beverage_Shop_System.ManageForms
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.InitialDirectory = "./";
-            openFileDialog.Filter = "图片文件|*.jpg;*.png|所有文件|*.*";
+            openFileDialog.Filter = "图片文件|*.jpg;*.jpeg;*.png|所有文件|*.*";
             
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 string selectedFile = @openFileDialog.FileName;
                 pictureBox.ImageLocation = selectedFile;
                 pictureBox.Show();
-                //将文件路径中的一个反斜杠替换为两个反斜杠
-                selectedFile = selectedFile.Replace(@"\",@"\\");
-                MessageBox.Show(selectedFile);
-                //更新数据库
-                ListViewItem selected_item = drinkInfoListView.SelectedItems[0];
-                int drink_id = Convert.ToInt32(selected_item.SubItems[0].Text);
-                DBOperator dbOperator = DBOperator.Instance;
-                dbOperator.TableExecute($"UPDATE drink_info SET drink_image = '{@selectedFile}' " +
-                                        $"WHERE drink_id = {drink_id}");
             }
         }
     }

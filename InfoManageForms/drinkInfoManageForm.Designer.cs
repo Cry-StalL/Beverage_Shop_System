@@ -225,7 +225,7 @@ namespace Beverage_Shop_System.ManageForms
             this.btn_reset.Name = "btn_reset";
             this.btn_reset.Size = new System.Drawing.Size(75, 35);
             this.btn_reset.TabIndex = 14;
-            this.btn_reset.Text = "重 置";
+            this.btn_reset.Text = "清  空";
             this.btn_reset.UseVisualStyleBackColor = true;
             this.btn_reset.Click += new System.EventHandler(this.btn_reset_Click);
             // 
