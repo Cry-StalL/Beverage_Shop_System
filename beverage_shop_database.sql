@@ -9,7 +9,7 @@ CREATE TABLE drink_info
     price_small DOUBLE(10,2) NULL,
     price_medium DOUBLE(10,2) NULL,
     price_large DOUBLE(10,2) NULL,
-    status int NOT NULL DEFAULT 0, -- 0在售, 1售完, 2停售，默认值为0
+    status INT NOT NULL DEFAULT 0, -- 0在售, 1售完, 2停售，默认值为0
     
     UNIQUE (drink_name)
     

@@ -380,5 +380,16 @@ namespace Beverage_Shop_System.ManageForms
                 pictureBox.Show();
             }
         }
+
+        private void btn_resetPicture_Click(object sender, EventArgs e)
+        {
+            ListViewItem selected_item = drinkInfoListView.SelectedItems[0];
+            int drink_id = Convert.ToInt32(selected_item.SubItems[0].Text);
+                
+            DBOperator dbOperator = DBOperator.Instance;
+            dbOperator.TableExecute($"UPDATE drink_info SET drink_image = NULL WHERE drink_id = {drink_id}");
+            
+            displaySelectedDrinkInfo();
+        }
     }
 }

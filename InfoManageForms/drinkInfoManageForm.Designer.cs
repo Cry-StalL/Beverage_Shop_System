@@ -60,6 +60,7 @@ namespace Beverage_Shop_System.ManageForms
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.btn_selectPicture = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.btn_resetPicture = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numBox_price_small)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numBox_price_medium)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numBox_price_large)).BeginInit();
@@ -276,11 +277,11 @@ namespace Beverage_Shop_System.ManageForms
             // btn_delete
             // 
             this.btn_delete.AutoSize = true;
-            this.btn_delete.Location = new System.Drawing.Point(126, 346);
+            this.btn_delete.Location = new System.Drawing.Point(95, 346);
             this.btn_delete.Name = "btn_delete";
-            this.btn_delete.Size = new System.Drawing.Size(75, 25);
+            this.btn_delete.Size = new System.Drawing.Size(77, 25);
             this.btn_delete.TabIndex = 19;
-            this.btn_delete.Text = "删 除";
+            this.btn_delete.Text = "删除饮品";
             this.btn_delete.UseVisualStyleBackColor = true;
             this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 
@@ -312,11 +313,23 @@ namespace Beverage_Shop_System.ManageForms
             this.label3.TabIndex = 22;
             this.label3.Text = "饮品图片";
             // 
+            // btn_resetPicture
+            // 
+            this.btn_resetPicture.AutoSize = true;
+            this.btn_resetPicture.Location = new System.Drawing.Point(178, 346);
+            this.btn_resetPicture.Name = "btn_resetPicture";
+            this.btn_resetPicture.Size = new System.Drawing.Size(77, 25);
+            this.btn_resetPicture.TabIndex = 23;
+            this.btn_resetPicture.Text = "重置图片";
+            this.btn_resetPicture.UseVisualStyleBackColor = true;
+            this.btn_resetPicture.Click += new System.EventHandler(this.btn_resetPicture_Click);
+            // 
             // drinkInfoManageForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(732, 703);
+            this.Controls.Add(this.btn_resetPicture);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btn_selectPicture);
             this.Controls.Add(this.pictureBox);
@@ -349,6 +362,8 @@ namespace Beverage_Shop_System.ManageForms
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.Button btn_resetPicture;
 
         private System.Windows.Forms.Button btn_selectPicture;
         private System.Windows.Forms.Label label3;
