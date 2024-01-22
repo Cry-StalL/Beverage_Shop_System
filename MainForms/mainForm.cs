@@ -48,14 +48,22 @@ namespace Beverage_Shop_System
 
         private void staffInfoManageMenuItem_Click(object sender, EventArgs e)
         {
-            throw new System.NotImplementedException();
+            staffInfoManageForm staff_info_manage_form = new staffInfoManageForm();
+            staff_info_manage_form.Show();
         }
-
+        private void exitLoginMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            this.Dispose();
+            
+        }
         private void exitMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
             this.Dispose();
             Application.Exit();
         }
+
+        
     }
 }

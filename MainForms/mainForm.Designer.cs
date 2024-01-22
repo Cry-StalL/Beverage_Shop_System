@@ -53,6 +53,7 @@ namespace Beverage_Shop_System
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStripTimeLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.timer = new System.Timers.Timer();
+            this.exitLoginMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.timer)).BeginInit();
@@ -70,7 +71,7 @@ namespace Beverage_Shop_System
             // 
             // manageToolStripMenuItem
             // 
-            this.manageToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.drinkInfoManageMenuItem, this.memberInfoManageMenuItem, this.staffInfoManageMenuItem, this.toolStripSeparator, this.exitMenuItem });
+            this.manageToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.drinkInfoManageMenuItem, this.memberInfoManageMenuItem, this.staffInfoManageMenuItem, this.toolStripSeparator, this.exitLoginMenuItem, this.exitMenuItem });
             this.manageToolStripMenuItem.Name = "manageToolStripMenuItem";
             this.manageToolStripMenuItem.Size = new System.Drawing.Size(81, 24);
             this.manageToolStripMenuItem.Text = "系统管理";
@@ -209,6 +210,13 @@ namespace Beverage_Shop_System
             this.timer.SynchronizingObject = this;
             this.timer.Elapsed += new System.Timers.ElapsedEventHandler(this.timer_Elapsed);
             // 
+            // exitLoginMenuItem
+            // 
+            this.exitLoginMenuItem.Name = "exitLoginMenuItem";
+            this.exitLoginMenuItem.Size = new System.Drawing.Size(168, 24);
+            this.exitLoginMenuItem.Text = "退出登录";
+            this.exitLoginMenuItem.Click += new System.EventHandler(this.exitLoginMenuItem_Click);
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -230,6 +238,8 @@ namespace Beverage_Shop_System
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.ToolStripMenuItem exitLoginMenuItem;
 
         private System.Timers.Timer timer;
 

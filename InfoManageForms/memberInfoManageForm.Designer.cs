@@ -143,7 +143,7 @@ namespace Beverage_Shop_System.ManageForms
             // 
             // label4
             // 
-            this.label4.Location = new System.Drawing.Point(269, 89);
+            this.label4.Location = new System.Drawing.Point(269, 159);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(100, 23);
             this.label4.TabIndex = 7;
@@ -151,7 +151,7 @@ namespace Beverage_Shop_System.ManageForms
             // 
             // label5
             // 
-            this.label5.Location = new System.Drawing.Point(269, 159);
+            this.label5.Location = new System.Drawing.Point(269, 89);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(100, 23);
             this.label5.TabIndex = 8;
@@ -175,14 +175,14 @@ namespace Beverage_Shop_System.ManageForms
             // 
             // txtBox_member_id
             // 
-            this.txtBox_member_id.Location = new System.Drawing.Point(347, 156);
+            this.txtBox_member_id.Location = new System.Drawing.Point(347, 86);
             this.txtBox_member_id.Name = "txtBox_member_id";
             this.txtBox_member_id.Size = new System.Drawing.Size(176, 25);
             this.txtBox_member_id.TabIndex = 22;
             // 
             // txtBox_telephone
             // 
-            this.txtBox_telephone.Location = new System.Drawing.Point(347, 86);
+            this.txtBox_telephone.Location = new System.Drawing.Point(347, 156);
             this.txtBox_telephone.Name = "txtBox_telephone";
             this.txtBox_telephone.Size = new System.Drawing.Size(176, 25);
             this.txtBox_telephone.TabIndex = 21;
@@ -255,6 +255,7 @@ namespace Beverage_Shop_System.ManageForms
             this.btn_reset.TabIndex = 25;
             this.btn_reset.Text = "重 置";
             this.btn_reset.UseVisualStyleBackColor = true;
+            this.btn_reset.Click += new System.EventHandler(this.btn_reset_Click);
             // 
             // btn_cancel
             // 
