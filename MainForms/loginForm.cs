@@ -61,7 +61,7 @@ namespace Beverage_Shop_System
                         DataRow current_staff_info = dt.Rows[0];
                         
                         this.Hide();
-                        mainForm main_form = new mainForm(current_staff_info); //传入查到的dt行
+                        mainForm main_form = new mainForm(current_staff_info, this); //传入查到的dt行
                         main_form.Show();
                     }
                 }
@@ -74,6 +74,18 @@ namespace Beverage_Shop_System
             this.Close();
             this.Dispose();
             Application.Exit();
+        }
+
+        private void resetInput()
+        {
+            txtBox_username.Text = "";
+            txtBox_password.Text = "";
+        }
+
+        public void reShow()
+        {
+            resetInput();
+            this.Show();
         }
     }
 }

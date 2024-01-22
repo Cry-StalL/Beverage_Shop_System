@@ -8,18 +8,20 @@ namespace Beverage_Shop_System
 {
     public partial class mainForm : Form
     {
-        public mainForm(DataRow staff_info)
+        public mainForm(DataRow staff_info, loginForm login_form)
         {
             InitializeComponent();
             
             //存储登入操作员的信息
             current_staff_info = staff_info;
+            this.login_form = login_form;
             
             //初始化状态栏
             initialize_status_strip();
         }
 
         private DataRow current_staff_info;
+        private loginForm login_form;
 
         private void initialize_status_strip()
         {
@@ -55,7 +57,7 @@ namespace Beverage_Shop_System
         {
             this.Close();
             this.Dispose();
-            
+            login_form.reShow();
         }
         private void exitMenuItem_Click(object sender, EventArgs e)
         {
