@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Diagnostics;
+using System.Drawing;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
@@ -94,6 +95,9 @@ namespace Beverage_Shop_System.ManageForms
             comboBox_status.SelectedIndex = -1;
             
             drinkInfoListView.SelectedItems.Clear();
+            
+            //隐藏图片
+            pictureBox.Hide();
         }
         
         private void btn_reset_Click(object sender, EventArgs e)
@@ -215,7 +219,8 @@ namespace Beverage_Shop_System.ManageForms
         private void displaySelectedDrinkInfo()
         {
             ListViewItem selected_item = drinkInfoListView.SelectedItems[0];
-            
+            int drink_id = Convert.ToInt32(selected_item.SubItems[0].Text);
+
             string drink_name = selected_item.SubItems[1].Text;
             txtBox_drink_name.Text = drink_name;
 
@@ -232,7 +237,7 @@ namespace Beverage_Shop_System.ManageForms
             {
                 checkBox_small.Checked = false;
             }
-            
+
             if (price_medium != "")
             {
                 checkBox_medium.Checked = true;
@@ -242,7 +247,7 @@ namespace Beverage_Shop_System.ManageForms
             {
                 checkBox_medium.Checked = false;
             }
-            
+
             if (price_large != "")
             {
                 checkBox_large.Checked = true;
@@ -252,19 +257,30 @@ namespace Beverage_Shop_System.ManageForms
             {
                 checkBox_large.Checked = false;
             }
-            
+
             string status = selected_item.SubItems[5].Text;
             if (status == "在售")
             {
                 comboBox_status.SelectedIndex = 0;
-            }else if (status == "售完")
+            }
+            else if (status == "售完")
             {
                 comboBox_status.SelectedIndex = 1;
-            }else if (status == "停售")
+            }
+            else if (status == "停售")
             {
                 comboBox_status.SelectedIndex = 2;
             }
+
+            //显示饮品图片
+            DBOperator dbOperator = DBOperator.Instance;
+            DataTable dt = dbOperator.TableQuery($"SELECT * FROM drink_info WHERE drink_id = {drink_id}");
+            DataRow row = dt.Rows[0];
+            pictureBox.ImageLocation = row["drink_image"].ToString();
+            pictureBox.Show();
         }
+
+
 
         private void drinkInfoListView_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -352,8 +368,18 @@ namespace Beverage_Shop_System.ManageForms
             
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                string selectedFile = openFileDialog.FileName;
+                string selectedFile = @openFileDialog.FileName;
                 pictureBox.ImageLocation = selectedFile;
+                pictureBox.Show();
+                //将文件路径中的一个反斜杠替换为两个反斜杠
+                selectedFile = selectedFile.Replace(@"\",@"\\");
+                MessageBox.Show(selectedFile);
+                //更新数据库
+                ListViewItem selected_item = drinkInfoListView.SelectedItems[0];
+                int drink_id = Convert.ToInt32(selected_item.SubItems[0].Text);
+                DBOperator dbOperator = DBOperator.Instance;
+                dbOperator.TableExecute($"UPDATE drink_info SET drink_image = '{@selectedFile}' " +
+                                        $"WHERE drink_id = {drink_id}");
             }
         }
     }
