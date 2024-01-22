@@ -54,7 +54,6 @@ CREATE TABLE user_info
 DROP TABLE IF EXISTS order_info;
 CREATE TABLE order_info(
    order_id INT PRIMARY KEY AUTO_INCREMENT,
-   count INT NOT NUll, -- 饮品杯数
 
     -- 订单支付信息
    order_amount DOUBLE(10,2) NOT NULL, -- 订单总额
@@ -62,13 +61,13 @@ CREATE TABLE order_info(
    discount_amount DOUBLE(10,2) NOT NULL,
    paid_amount DOUBLE(10,2) NOT NULL,
    pay_method INT NOT NULL, -- 0现金，1银行卡，2微信，3支付宝
-   order_time DATETIME NOT NULL,
+   order_time DATETIME NOT NULL
 
     -- 顾客-会员信息(若有)
-   member_id INT NULL, -- 会员卡号(外键)
-
-    -- 操作员
-   staff_username VARCHAR(255) NOT NULL -- 用户名(外键)
+#    member_id INT NULL, -- 会员卡号(外键)
+# 
+#     -- 操作员
+#    staff_username VARCHAR(255) NOT NULL -- 用户名(外键)
 
 -- 	FOREIGN KEY (member_id) REFERENCES user_info(member_id),
 -- 	FOREIGN KEY (staff_username) REFERENCES user_info(username)

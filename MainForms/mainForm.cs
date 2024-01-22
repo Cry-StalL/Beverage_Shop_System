@@ -86,7 +86,7 @@ namespace Beverage_Shop_System
 
         private void orderMenuItem_Click(object sender, EventArgs e)
         {
-            OrderForm orderForm = new OrderForm();
+            OrderForm orderForm = new OrderForm(current_staff_info);
             orderForm.Show();
         }
     }

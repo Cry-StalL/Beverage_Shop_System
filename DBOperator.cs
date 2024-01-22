@@ -78,6 +78,13 @@ namespace Beverage_Shop_System
             int i = cmd.ExecuteNonQuery();
             return i;
         }
+
+        public object TableExecuteScalar(string queryStr)
+        {
+            MySqlCommand cmd = new MySqlCommand(queryStr, conn);
+            object i = cmd.ExecuteScalar();
+            return i;
+        }
         
         /*----用户相关操作----*/
         public bool userExists(string username)
