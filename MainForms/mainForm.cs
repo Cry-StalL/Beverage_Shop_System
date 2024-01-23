@@ -4,6 +4,7 @@ using System.Timers;
 using System.Windows.Forms;
 using Beverage_Shop_System.ManageForms;
 using Beverage_Shop_System.OrderForms;
+using Beverage_Shop_System.QueryForms;
 
 namespace Beverage_Shop_System
 {
@@ -88,6 +89,12 @@ namespace Beverage_Shop_System
         {
             OrderForm orderForm = new OrderForm(current_staff_info);
             orderForm.Show();
+        }
+
+        private void drinkInfoQueryMenuItem_Click(object sender, EventArgs e)
+        {
+            DrinkInfoQueryForm drinkInfoQueryForm = new DrinkInfoQueryForm();
+            drinkInfoQueryForm.Show();
         }
     }
 }

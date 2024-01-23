@@ -131,14 +131,14 @@ namespace Beverage_Shop_System
             // orderMenuItem
             // 
             this.orderMenuItem.Name = "orderMenuItem";
-            this.orderMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.orderMenuItem.Size = new System.Drawing.Size(138, 24);
             this.orderMenuItem.Text = "点餐收银";
             this.orderMenuItem.Click += new System.EventHandler(this.orderMenuItem_Click);
             // 
             // playMusicMenuItem
             // 
             this.playMusicMenuItem.Name = "playMusicMenuItem";
-            this.playMusicMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.playMusicMenuItem.Size = new System.Drawing.Size(138, 24);
             this.playMusicMenuItem.Text = "音乐播放";
             this.playMusicMenuItem.Click += new System.EventHandler(this.playMusicMenuItem_Click);
             // 
@@ -154,6 +154,7 @@ namespace Beverage_Shop_System
             this.drinkInfoQueryMenuItem.Name = "drinkInfoQueryMenuItem";
             this.drinkInfoQueryMenuItem.Size = new System.Drawing.Size(168, 24);
             this.drinkInfoQueryMenuItem.Text = "饮品信息查询";
+            this.drinkInfoQueryMenuItem.Click += new System.EventHandler(this.drinkInfoQueryMenuItem_Click);
             // 
             // memberInfoQueryMenuItem
             // 

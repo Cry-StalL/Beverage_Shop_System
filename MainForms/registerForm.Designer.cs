@@ -161,6 +161,9 @@ namespace Beverage_Shop_System
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "registerForm";
             this.Text = "操作员注册";
             this.ResumeLayout(false);

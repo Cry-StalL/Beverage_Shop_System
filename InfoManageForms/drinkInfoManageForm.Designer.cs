@@ -70,13 +70,14 @@ namespace Beverage_Shop_System.ManageForms
             // drinkInfoListView
             // 
             this.drinkInfoListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] { this.col_drink_id, this.col_drink_name, this.col_price_small, this.col_price_medium, this.col_price_large, this.col_status });
+            this.drinkInfoListView.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.drinkInfoListView.FullRowSelect = true;
             this.drinkInfoListView.GridLines = true;
             this.drinkInfoListView.HideSelection = false;
-            this.drinkInfoListView.Location = new System.Drawing.Point(12, 377);
+            this.drinkInfoListView.Location = new System.Drawing.Point(0, 377);
             this.drinkInfoListView.MultiSelect = false;
             this.drinkInfoListView.Name = "drinkInfoListView";
-            this.drinkInfoListView.Size = new System.Drawing.Size(708, 314);
+            this.drinkInfoListView.Size = new System.Drawing.Size(732, 326);
             this.drinkInfoListView.TabIndex = 0;
             this.drinkInfoListView.UseCompatibleStateImageBehavior = false;
             this.drinkInfoListView.View = System.Windows.Forms.View.Details;
@@ -137,6 +138,7 @@ namespace Beverage_Shop_System.ManageForms
             // 
             // label_price_small
             // 
+            this.label_price_small.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label_price_small.Location = new System.Drawing.Point(77, 132);
             this.label_price_small.Name = "label_price_small";
             this.label_price_small.Size = new System.Drawing.Size(100, 23);
@@ -145,6 +147,7 @@ namespace Beverage_Shop_System.ManageForms
             // 
             // label_price_medium
             // 
+            this.label_price_medium.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label_price_medium.Location = new System.Drawing.Point(77, 188);
             this.label_price_medium.Name = "label_price_medium";
             this.label_price_medium.Size = new System.Drawing.Size(100, 23);
@@ -153,6 +156,7 @@ namespace Beverage_Shop_System.ManageForms
             // 
             // label_price_large
             // 
+            this.label_price_large.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label_price_large.Location = new System.Drawing.Point(77, 244);
             this.label_price_large.Name = "label_price_large";
             this.label_price_large.Size = new System.Drawing.Size(100, 23);
@@ -168,6 +172,7 @@ namespace Beverage_Shop_System.ManageForms
             // 
             // numBox_price_small
             // 
+            this.numBox_price_small.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.numBox_price_small.DecimalPlaces = 2;
             this.numBox_price_small.Location = new System.Drawing.Point(126, 130);
             this.numBox_price_small.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
@@ -177,6 +182,7 @@ namespace Beverage_Shop_System.ManageForms
             // 
             // numBox_price_medium
             // 
+            this.numBox_price_medium.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.numBox_price_medium.DecimalPlaces = 2;
             this.numBox_price_medium.Location = new System.Drawing.Point(126, 186);
             this.numBox_price_medium.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
@@ -186,6 +192,7 @@ namespace Beverage_Shop_System.ManageForms
             // 
             // numBox_price_large
             // 
+            this.numBox_price_large.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.numBox_price_large.DecimalPlaces = 2;
             this.numBox_price_large.Location = new System.Drawing.Point(126, 242);
             this.numBox_price_large.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
@@ -195,6 +202,8 @@ namespace Beverage_Shop_System.ManageForms
             // 
             // comboBox_status
             // 
+            this.comboBox_status.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBox_status.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_status.FormattingEnabled = true;
             this.comboBox_status.Items.AddRange(new object[] { "在售", "售完", "停售" });
             this.comboBox_status.Location = new System.Drawing.Point(385, 54);
@@ -204,6 +213,7 @@ namespace Beverage_Shop_System.ManageForms
             // 
             // label6
             // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.Location = new System.Drawing.Point(335, 57);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(49, 23);
@@ -212,6 +222,7 @@ namespace Beverage_Shop_System.ManageForms
             // 
             // btn_save
             // 
+            this.btn_save.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btn_save.Location = new System.Drawing.Point(348, 297);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(75, 35);
@@ -222,6 +233,7 @@ namespace Beverage_Shop_System.ManageForms
             // 
             // btn_reset
             // 
+            this.btn_reset.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btn_reset.Location = new System.Drawing.Point(491, 297);
             this.btn_reset.Name = "btn_reset";
             this.btn_reset.Size = new System.Drawing.Size(75, 35);
@@ -232,6 +244,7 @@ namespace Beverage_Shop_System.ManageForms
             // 
             // checkBox_small
             // 
+            this.checkBox_small.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.checkBox_small.AutoSize = true;
             this.checkBox_small.Location = new System.Drawing.Point(12, 132);
             this.checkBox_small.Name = "checkBox_small";
@@ -243,6 +256,7 @@ namespace Beverage_Shop_System.ManageForms
             // 
             // checkBox_medium
             // 
+            this.checkBox_medium.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.checkBox_medium.AutoSize = true;
             this.checkBox_medium.Location = new System.Drawing.Point(12, 188);
             this.checkBox_medium.Name = "checkBox_medium";
@@ -254,6 +268,7 @@ namespace Beverage_Shop_System.ManageForms
             // 
             // checkBox_large
             // 
+            this.checkBox_large.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.checkBox_large.AutoSize = true;
             this.checkBox_large.Location = new System.Drawing.Point(12, 244);
             this.checkBox_large.Name = "checkBox_large";
@@ -265,6 +280,7 @@ namespace Beverage_Shop_System.ManageForms
             // 
             // btn_cancel_select
             // 
+            this.btn_cancel_select.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btn_cancel_select.AutoSize = true;
             this.btn_cancel_select.Location = new System.Drawing.Point(12, 346);
             this.btn_cancel_select.Name = "btn_cancel_select";
@@ -276,6 +292,7 @@ namespace Beverage_Shop_System.ManageForms
             // 
             // btn_delete
             // 
+            this.btn_delete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btn_delete.AutoSize = true;
             this.btn_delete.Location = new System.Drawing.Point(95, 346);
             this.btn_delete.Name = "btn_delete";
@@ -287,6 +304,7 @@ namespace Beverage_Shop_System.ManageForms
             // 
             // pictureBox
             // 
+            this.pictureBox.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.pictureBox.Location = new System.Drawing.Point(346, 143);
             this.pictureBox.Name = "pictureBox";
             this.pictureBox.Size = new System.Drawing.Size(220, 148);
@@ -296,6 +314,7 @@ namespace Beverage_Shop_System.ManageForms
             // 
             // btn_selectPicture
             // 
+            this.btn_selectPicture.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btn_selectPicture.Location = new System.Drawing.Point(421, 113);
             this.btn_selectPicture.Name = "btn_selectPicture";
             this.btn_selectPicture.Size = new System.Drawing.Size(85, 24);
@@ -306,6 +325,7 @@ namespace Beverage_Shop_System.ManageForms
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(348, 118);
             this.label3.Name = "label3";
@@ -315,6 +335,7 @@ namespace Beverage_Shop_System.ManageForms
             // 
             // btn_resetPicture
             // 
+            this.btn_resetPicture.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btn_resetPicture.AutoSize = true;
             this.btn_resetPicture.Location = new System.Drawing.Point(178, 346);
             this.btn_resetPicture.Name = "btn_resetPicture";
