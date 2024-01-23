@@ -117,7 +117,5 @@ namespace Beverage_Shop_System.QueryForms
         {
             MessageBox.Show(getQueryStr());
         }
-
-        
     }
 }

@@ -105,6 +105,12 @@ namespace Beverage_Shop_System
 
         private void orderInfoQueryMenuItem_Click(object sender, EventArgs e)
         {
+            OrderInfoQueryForm orderInfoQueryForm = new OrderInfoQueryForm();
+            orderInfoQueryForm.Show();
+        }
+
+        private void saleStatsMenuItem_Click(object sender, EventArgs e)
+        {
             throw new System.NotImplementedException();
         }
     }

@@ -2,7 +2,7 @@
 
 namespace Beverage_Shop_System.QueryForms
 {
-    partial class OrderInfoQuery
+    partial class OrderInfoQueryForm
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,17 @@ namespace Beverage_Shop_System.QueryForms
         /// </summary>
         private void InitializeComponent()
         {
-            this.memberInfoListView = new System.Windows.Forms.ListView();
+            this.orderInfoListView = new System.Windows.Forms.ListView();
+            this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader4 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader5 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader11 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader12 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader13 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader14 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader15 = new System.Windows.Forms.ColumnHeader();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_orderDate = new System.Windows.Forms.CheckBox();
             this.dateTimePicker_start = new System.Windows.Forms.DateTimePicker();
@@ -45,32 +55,73 @@ namespace Beverage_Shop_System.QueryForms
             this.txtBox_memberID = new System.Windows.Forms.TextBox();
             this.btn_reset = new System.Windows.Forms.Button();
             this.btn_search = new System.Windows.Forms.Button();
-            this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader4 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader5 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader11 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader12 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader13 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader14 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader15 = new System.Windows.Forms.ColumnHeader();
+            this.debug_getQueryStr = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // memberInfoListView
+            // orderInfoListView
             // 
-            this.memberInfoListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] { this.columnHeader1, this.columnHeader2, this.columnHeader3, this.columnHeader4, this.columnHeader5, this.columnHeader11, this.columnHeader12, this.columnHeader13, this.columnHeader14, this.columnHeader15 });
-            this.memberInfoListView.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.memberInfoListView.FullRowSelect = true;
-            this.memberInfoListView.GridLines = true;
-            this.memberInfoListView.HideSelection = false;
-            this.memberInfoListView.Location = new System.Drawing.Point(0, 111);
-            this.memberInfoListView.MultiSelect = false;
-            this.memberInfoListView.Name = "memberInfoListView";
-            this.memberInfoListView.Size = new System.Drawing.Size(882, 492);
-            this.memberInfoListView.TabIndex = 14;
-            this.memberInfoListView.UseCompatibleStateImageBehavior = false;
-            this.memberInfoListView.View = System.Windows.Forms.View.Details;
+            this.orderInfoListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] { this.columnHeader1, this.columnHeader2, this.columnHeader3, this.columnHeader4, this.columnHeader5, this.columnHeader11, this.columnHeader12, this.columnHeader13, this.columnHeader14, this.columnHeader15 });
+            this.orderInfoListView.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.orderInfoListView.FullRowSelect = true;
+            this.orderInfoListView.GridLines = true;
+            this.orderInfoListView.HideSelection = false;
+            this.orderInfoListView.Location = new System.Drawing.Point(0, 111);
+            this.orderInfoListView.MultiSelect = false;
+            this.orderInfoListView.Name = "orderInfoListView";
+            this.orderInfoListView.Size = new System.Drawing.Size(882, 492);
+            this.orderInfoListView.TabIndex = 14;
+            this.orderInfoListView.UseCompatibleStateImageBehavior = false;
+            this.orderInfoListView.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "订单编号";
+            this.columnHeader1.Width = 84;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "会员卡号";
+            this.columnHeader2.Width = 98;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "订单内容";
+            this.columnHeader3.Width = 83;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "订单金额";
+            this.columnHeader4.Width = 86;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "折扣比例";
+            this.columnHeader5.Width = 90;
+            // 
+            // columnHeader11
+            // 
+            this.columnHeader11.Text = "折扣金额";
+            this.columnHeader11.Width = 86;
+            // 
+            // columnHeader12
+            // 
+            this.columnHeader12.Text = "实收金额";
+            this.columnHeader12.Width = 96;
+            // 
+            // columnHeader13
+            // 
+            this.columnHeader13.Text = "支付方式";
+            this.columnHeader13.Width = 85;
+            // 
+            // columnHeader14
+            // 
+            this.columnHeader14.Text = "销售日期";
+            this.columnHeader14.Width = 81;
+            // 
+            // columnHeader15
+            // 
+            this.columnHeader15.Text = "操作员";
+            this.columnHeader15.Width = 74;
             // 
             // label1
             // 
@@ -127,6 +178,7 @@ namespace Beverage_Shop_System.QueryForms
             // comboBox_payMethod
             // 
             this.comboBox_payMethod.FormattingEnabled = true;
+            this.comboBox_payMethod.Items.AddRange(new object[] { "全部", "现金", "银行卡", "微信", "支付宝" });
             this.comboBox_payMethod.Location = new System.Drawing.Point(535, 30);
             this.comboBox_payMethod.Name = "comboBox_payMethod";
             this.comboBox_payMethod.Size = new System.Drawing.Size(121, 23);
@@ -174,6 +226,7 @@ namespace Beverage_Shop_System.QueryForms
             this.btn_reset.TabIndex = 27;
             this.btn_reset.Text = "重 置";
             this.btn_reset.UseVisualStyleBackColor = true;
+            this.btn_reset.Click += new System.EventHandler(this.btn_reset_Click);
             // 
             // btn_search
             // 
@@ -183,52 +236,25 @@ namespace Beverage_Shop_System.QueryForms
             this.btn_search.TabIndex = 26;
             this.btn_search.Text = "查 询";
             this.btn_search.UseVisualStyleBackColor = true;
+            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
-            // columnHeader1
+            // debug_getQueryStr
             // 
-            this.columnHeader1.Text = "订单编号";
+            this.debug_getQueryStr.Location = new System.Drawing.Point(818, 140);
+            this.debug_getQueryStr.Name = "debug_getQueryStr";
+            this.debug_getQueryStr.Size = new System.Drawing.Size(52, 26);
+            this.debug_getQueryStr.TabIndex = 28;
+            this.debug_getQueryStr.Text = "test";
+            this.debug_getQueryStr.UseVisualStyleBackColor = true;
+            this.debug_getQueryStr.Visible = false;
+            this.debug_getQueryStr.Click += new System.EventHandler(this.debug_getQueryStr_Click);
             // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "会员卡号";
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "订单内容";
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "订单金额";
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "折扣比例";
-            // 
-            // columnHeader11
-            // 
-            this.columnHeader11.Text = "折扣金额";
-            // 
-            // columnHeader12
-            // 
-            this.columnHeader12.Text = "实收金额";
-            // 
-            // columnHeader13
-            // 
-            this.columnHeader13.Text = "支付方式";
-            // 
-            // columnHeader14
-            // 
-            this.columnHeader14.Text = "销售日期";
-            // 
-            // columnHeader15
-            // 
-            this.columnHeader15.Text = "操作员";
-            // 
-            // OrderInfoQuery
+            // OrderInfoQueryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(882, 603);
+            this.Controls.Add(this.debug_getQueryStr);
             this.Controls.Add(this.btn_reset);
             this.Controls.Add(this.btn_search);
             this.Controls.Add(this.txtBox_memberID);
@@ -242,12 +268,14 @@ namespace Beverage_Shop_System.QueryForms
             this.Controls.Add(this.dateTimePicker_start);
             this.Controls.Add(this.btn_orderDate);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.memberInfoListView);
-            this.Name = "OrderInfoQuery";
+            this.Controls.Add(this.orderInfoListView);
+            this.Name = "OrderInfoQueryForm";
             this.Text = "营业信息查询";
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.Button debug_getQueryStr;
 
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
@@ -276,7 +304,7 @@ namespace Beverage_Shop_System.QueryForms
         private System.Windows.Forms.DateTimePicker dateTimePicker_end;
         private System.Windows.Forms.CheckBox btn_payMethod;
 
-        private System.Windows.Forms.ListView memberInfoListView;
+        private System.Windows.Forms.ListView orderInfoListView;
 
         #endregion
     }

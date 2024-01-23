@@ -212,13 +212,18 @@ namespace Beverage_Shop_System.OrderForms
             
             DateTime order_time = DateTime.Now;
 
+            string member_id = txtBox_memberID.Text != "" ? txtBox_memberID.Text : "NULL";
+
+            string staff_name = current_staff_info["real_name"].ToString();
+
             DBOperator dbOperator = DBOperator.Instance;
             
             /*order_info表*/
             
             object order_id_col = dbOperator.TableExecuteScalar(
-                $"INSERT INTO order_info (order_amount, amount_rate, discount_amount, paid_amount, pay_method, order_time) " +
-                $"VALUES ({order_amount}, {amount_rate}, {discount_amount}, {paid_amount}, {pay_method}, '{order_time.ToString("yyyy-MM-dd HH:mm:ss")}')");
+                $"INSERT INTO order_info (order_amount, amount_rate, discount_amount, paid_amount, pay_method, order_time, member_id, staff_name) " +
+                $"VALUES ({order_amount}, {amount_rate}, {discount_amount}, {paid_amount}, {pay_method}, '{order_time.ToString("yyyy-MM-dd HH:mm:ss")}', " +
+                $"{member_id}, '{staff_name}')");
             
             /*order_items表*/
             

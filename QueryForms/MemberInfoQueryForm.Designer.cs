@@ -49,8 +49,6 @@ namespace Beverage_Shop_System.QueryForms
             this.debug_getQueryStr = new System.Windows.Forms.Button();
             this.btn_reset = new System.Windows.Forms.Button();
             this.btn_search = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // memberInfoListView
@@ -206,31 +204,11 @@ namespace Beverage_Shop_System.QueryForms
             this.btn_search.UseVisualStyleBackColor = true;
             this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(407, 278);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(73, 47);
-            this.button1.TabIndex = 27;
-            this.button1.Text = "重 置";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(302, 278);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(73, 47);
-            this.button2.TabIndex = 26;
-            this.button2.Text = "查 询";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // MemberInfoQueryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(782, 603);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.btn_reset);
             this.Controls.Add(this.btn_search);
             this.Controls.Add(this.debug_getQueryStr);
@@ -249,9 +227,6 @@ namespace Beverage_Shop_System.QueryForms
             this.ResumeLayout(false);
             this.PerformLayout();
         }
-
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
 
         private System.Windows.Forms.Button btn_reset;
         private System.Windows.Forms.Button btn_search;

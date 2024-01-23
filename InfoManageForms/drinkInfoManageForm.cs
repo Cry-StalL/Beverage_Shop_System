@@ -117,7 +117,6 @@ namespace Beverage_Shop_System.ManageForms
             string drink_image = pictureBox.ImageLocation;
             if (drink_image != null)
             {
-                MessageBox.Show("abcd");
                 drink_image = drink_image.Replace(@"\",@"\\"); //将文件路径中的一个反斜杠替换为两个反斜杠
             }
             

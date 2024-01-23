@@ -175,6 +175,7 @@ namespace Beverage_Shop_System
             this.saleStatsMenuItem.Name = "saleStatsMenuItem";
             this.saleStatsMenuItem.Size = new System.Drawing.Size(168, 24);
             this.saleStatsMenuItem.Text = "业绩统计分析";
+            this.saleStatsMenuItem.Click += new System.EventHandler(this.saleStatsMenuItem_Click);
             // 
             // toolStrip
             // 
