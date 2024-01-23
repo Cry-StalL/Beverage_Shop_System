@@ -111,7 +111,31 @@ namespace Beverage_Shop_System
 
         private void saleStatsMenuItem_Click(object sender, EventArgs e)
         {
-            throw new System.NotImplementedException();
+            SaleStatsForm saleStatsForm = new SaleStatsForm();
+            saleStatsForm.Show();
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            drinkInfoManageForm drink_info_manage_form = new drinkInfoManageForm();
+            drink_info_manage_form.Show();
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            memberInfoManageForm member_info_manage_form = new memberInfoManageForm();
+            member_info_manage_form.Show();
+        }
+
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            OrderForm orderForm = new OrderForm(current_staff_info);
+            orderForm.Show();
+        }
+
+        private void toolStripButton5_Click(object sender, EventArgs e)
+        {
+            playMusic();
         }
     }
 }

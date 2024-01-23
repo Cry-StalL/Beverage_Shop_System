@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace Beverage_Shop_System.QueryForms
@@ -88,7 +89,8 @@ namespace Beverage_Shop_System.QueryForms
             
             if (btn_orderDate.Checked)
             {
-                
+                query_str += $" order_time >= '{dateTimePicker_start.Value.ToString("yyyy-MM-dd")}' AND" +
+                             $" order_time <= '{dateTimePicker_end.Value.ToString("yyyy-MM-dd")}' AND";
             }
 
             if (btn_payMethod.Checked)

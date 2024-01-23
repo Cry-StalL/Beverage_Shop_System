@@ -55,7 +55,6 @@ namespace Beverage_Shop_System.QueryForms
             this.txtBox_memberID = new System.Windows.Forms.TextBox();
             this.btn_reset = new System.Windows.Forms.Button();
             this.btn_search = new System.Windows.Forms.Button();
-            this.debug_getQueryStr = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // orderInfoListView
@@ -238,23 +237,11 @@ namespace Beverage_Shop_System.QueryForms
             this.btn_search.UseVisualStyleBackColor = true;
             this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
-            // debug_getQueryStr
-            // 
-            this.debug_getQueryStr.Location = new System.Drawing.Point(818, 140);
-            this.debug_getQueryStr.Name = "debug_getQueryStr";
-            this.debug_getQueryStr.Size = new System.Drawing.Size(52, 26);
-            this.debug_getQueryStr.TabIndex = 28;
-            this.debug_getQueryStr.Text = "test";
-            this.debug_getQueryStr.UseVisualStyleBackColor = true;
-            this.debug_getQueryStr.Visible = false;
-            this.debug_getQueryStr.Click += new System.EventHandler(this.debug_getQueryStr_Click);
-            // 
             // OrderInfoQueryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(882, 603);
-            this.Controls.Add(this.debug_getQueryStr);
             this.Controls.Add(this.btn_reset);
             this.Controls.Add(this.btn_search);
             this.Controls.Add(this.txtBox_memberID);
@@ -274,8 +261,6 @@ namespace Beverage_Shop_System.QueryForms
             this.ResumeLayout(false);
             this.PerformLayout();
         }
-
-        private System.Windows.Forms.Button debug_getQueryStr;
 
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;

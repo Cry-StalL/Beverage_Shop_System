@@ -220,12 +220,39 @@ namespace Beverage_Shop_System.OrderForms
             
             /*order_info表*/
             
-            object order_id_col = dbOperator.TableExecuteScalar(
+            dbOperator.TableExecute(
                 $"INSERT INTO order_info (order_amount, amount_rate, discount_amount, paid_amount, pay_method, order_time, member_id, staff_name) " +
                 $"VALUES ({order_amount}, {amount_rate}, {discount_amount}, {paid_amount}, {pay_method}, '{order_time.ToString("yyyy-MM-dd HH:mm:ss")}', " +
                 $"{member_id}, '{staff_name}')");
             
+            //查order_info的最后一行，得到该订单的order_id
+            DataTable dt = dbOperator.TableQuery("SELECT * FROM order_info ORDER BY order_id DESC LIMIT 1");
+            DataRow row = dt.Rows[0];
+            string order_id = row[0].ToString();
+
             /*order_items表*/
+            foreach (ListViewItem item in orderInfoListView.Items)
+            {
+                string size_str = item.SubItems[2].Text.ToString();
+                int size = 0;
+                switch (size_str)
+                {
+                    case "小杯":
+                        size = 0;
+                        break;
+                    case "中杯":
+                        size = 1;
+                        break;
+                    case "大杯":
+                        size = 2;
+                        break;
+                }
+
+                string sql_str = "INSERT INTO order_item_info (order_id, drink_id, size, count) VALUES" +
+                                   $"({order_id}, {item.SubItems[0].Text.ToString()}, {size}, {item.SubItems[4].Text.ToString()})";
+                
+                dbOperator.TableExecute(sql_str);
+            }
             
         }
 
