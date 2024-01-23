@@ -102,5 +102,10 @@ namespace Beverage_Shop_System
             MemberInfoQueryForm memberInfoQueryForm = new MemberInfoQueryForm();
             memberInfoQueryForm.Show();
         }
+
+        private void orderInfoQueryMenuItem_Click(object sender, EventArgs e)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

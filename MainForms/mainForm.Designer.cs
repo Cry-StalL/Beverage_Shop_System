@@ -168,6 +168,7 @@ namespace Beverage_Shop_System
             this.orderInfoQueryMenuItem.Name = "orderInfoQueryMenuItem";
             this.orderInfoQueryMenuItem.Size = new System.Drawing.Size(168, 24);
             this.orderInfoQueryMenuItem.Text = "营业信息查询";
+            this.orderInfoQueryMenuItem.Click += new System.EventHandler(this.orderInfoQueryMenuItem_Click);
             // 
             // saleStatsMenuItem
             // 
