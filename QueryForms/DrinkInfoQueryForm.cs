@@ -92,7 +92,7 @@ namespace Beverage_Shop_System.QueryForms
 
             if (query_str.EndsWith(" AND"))
             {
-                query_str = query_str.Substring(0, query_str.Length - 5);
+                query_str = query_str.Substring(0, query_str.Length - 4);
             }
 
             return query_str;

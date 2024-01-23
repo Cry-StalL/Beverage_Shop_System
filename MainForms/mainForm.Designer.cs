@@ -161,6 +161,7 @@ namespace Beverage_Shop_System
             this.memberInfoQueryMenuItem.Name = "memberInfoQueryMenuItem";
             this.memberInfoQueryMenuItem.Size = new System.Drawing.Size(168, 24);
             this.memberInfoQueryMenuItem.Text = "会员信息查询";
+            this.memberInfoQueryMenuItem.Click += new System.EventHandler(this.memberInfoQueryMenuItem_Click);
             // 
             // orderInfoQueryMenuItem
             // 

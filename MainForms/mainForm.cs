@@ -96,5 +96,11 @@ namespace Beverage_Shop_System
             DrinkInfoQueryForm drinkInfoQueryForm = new DrinkInfoQueryForm();
             drinkInfoQueryForm.Show();
         }
+
+        private void memberInfoQueryMenuItem_Click(object sender, EventArgs e)
+        {
+            MemberInfoQueryForm memberInfoQueryForm = new MemberInfoQueryForm();
+            memberInfoQueryForm.Show();
+        }
     }
 }

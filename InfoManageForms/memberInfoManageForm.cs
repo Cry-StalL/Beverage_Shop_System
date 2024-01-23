@@ -67,8 +67,6 @@ namespace Beverage_Shop_System.ManageForms
                 
                 memberInfoListView.Items.Add(item);
             }
-
-            
         }
 
         /**增加会员信息到数据库*/
